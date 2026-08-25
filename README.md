@@ -12,13 +12,17 @@ notebook/
   dip_client.py       reusable API client (retries, cursor pagination, logging)
   dip_ingest.ipynb     fetches Rentenpolitik-related `vorgang` records -> SQLite
   .env.example          copy to .env, add your DIP_API_KEY
-  requirements.txt       pinned deps for the ingest step (requests, python-dotenv, pandas, jupyter)
+  
 dbt_project/
   models/staging/       raw JSON -> typed columns + unnested topic/initiator arrays
   models/marts/         mart_rentenpolitik_monitor.sql -- the client deliverable
   profiles.yml.example  copy to ~/.dbt/profiles.yml, points at ../dip.sqlite
 concept/
   concept.pdf             2-page pipeline concept
+AI_chat_history.pdf
+README.md
+dip.sqlite
+requirements.txt       pinned deps for the ingest step (requests, python-dotenv, pandas, jupyter)
 ```
 
 ## Setup
