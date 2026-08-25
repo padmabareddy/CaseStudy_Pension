@@ -1,0 +1,1510 @@
+[0m10:13:44.422224 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001EC6FDCD3D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001EC6FDDDE90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001EC6FF34F10>]}
+
+
+============================== 10:13:44.428946 | f9bb0a62-22bd-4f04-94b6-f44c72669c7d ==============================
+[0m10:13:44.428946 [info ] [MainThread]: Running with dbt=1.12.3
+[0m10:13:44.428946 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'maximum_seed_size_mib': '1', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'static_parser': 'True', 'printer_width': '80', 'write_json': 'True', 'empty': 'False', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'profiles_dir': 'C:\\Users\\padma\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'invocation_command': 'dbt run', 'hints_enabled': 'True', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'use_colors': 'True', 'log_path': 'C:\\Users\\padma\\Desktop\\CaseStudy\\dbt_project\\logs'}
+[0m10:13:44.453100 [error] [MainThread]: [[31mERROR[0m]: Encountered an error:
+cannot import name 'Credentials' from 'dbt.adapters.base' (C:\Users\padma\miniconda3\envs\dip-pipeline\Lib\site-packages\dbt\adapters\base\__init__.py)
+[0m10:13:44.459634 [error] [MainThread]: Traceback (most recent call last):
+  File "C:\Users\padma\miniconda3\envs\dip-pipeline\Lib\site-packages\dbt\cli\requires.py", line 198, in wrapper
+    result, success = func(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\padma\miniconda3\envs\dip-pipeline\Lib\site-packages\dbt\cli\requires.py", line 144, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\padma\miniconda3\envs\dip-pipeline\Lib\site-packages\dbt\cli\requires.py", line 291, in wrapper
+    profile = load_profile(flags.PROJECT_DIR, flags.VARS, flags.PROFILE, flags.TARGET, threads)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\padma\miniconda3\envs\dip-pipeline\Lib\site-packages\dbt\config\runtime.py", line 98, in load_profile
+    profile = Profile.render(
+              ^^^^^^^^^^^^^^^
+  File "C:\Users\padma\miniconda3\envs\dip-pipeline\Lib\site-packages\dbt\config\profile.py", line 404, in render
+    return cls.from_raw_profiles(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\padma\miniconda3\envs\dip-pipeline\Lib\site-packages\dbt\config\profile.py", line 370, in from_raw_profiles
+    return cls.from_raw_profile_info(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\padma\miniconda3\envs\dip-pipeline\Lib\site-packages\dbt\config\profile.py", line 326, in from_raw_profile_info
+    credentials: Credentials = cls._credentials_from_profile(
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\padma\miniconda3\envs\dip-pipeline\Lib\site-packages\dbt\config\profile.py", line 150, in _credentials_from_profile
+    cls = load_plugin(typename)
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\padma\miniconda3\envs\dip-pipeline\Lib\site-packages\dbt\adapters\factory.py", line 239, in load_plugin
+    return FACTORY.load_plugin(name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\padma\miniconda3\envs\dip-pipeline\Lib\site-packages\dbt\adapters\factory.py", line 68, in load_plugin
+    mod: Any = import_module("." + name, "dbt.adapters")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\padma\miniconda3\envs\dip-pipeline\Lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1204, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1147, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "C:\Users\padma\miniconda3\envs\dip-pipeline\Lib\site-packages\dbt\adapters\sqlite\__init__.py", line 1, in <module>
+    from dbt.adapters.sqlite.connections import SQLiteConnectionManager
+  File "C:\Users\padma\miniconda3\envs\dip-pipeline\Lib\site-packages\dbt\adapters\sqlite\connections.py", line 10, in <module>
+    from dbt.adapters.base import Credentials
+ImportError: cannot import name 'Credentials' from 'dbt.adapters.base' (C:\Users\padma\miniconda3\envs\dip-pipeline\Lib\site-packages\dbt\adapters\base\__init__.py)
+
+[0m10:13:44.459634 [debug] [MainThread]: Command `dbt run` failed at 10:13:44.459634 after 0.19 seconds
+[0m10:13:44.459634 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001EC6FF4D290>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001EC6FDB6BD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001EC6FE89510>]}
+[0m10:13:44.459634 [debug] [MainThread]: Flushing usage events
+[0m10:13:45.492242 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m10:14:05.350973 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002540D193590>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002540D09EF10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002540D09EA50>]}
+
+
+============================== 10:14:05.355994 | 3a2e98ff-6444-4a27-aa51-f08c5f0f3045 ==============================
+[0m10:14:05.355994 [info ] [MainThread]: Running with dbt=1.12.3
+[0m10:14:05.358002 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'maximum_seed_size_mib': '1', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'version_check': 'True', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'False', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'profiles_dir': 'C:\\Users\\padma\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'use_colors': 'True', 'hints_enabled': 'True', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'invocation_command': 'dbt run', 'log_path': 'C:\\Users\\padma\\Desktop\\CaseStudy\\dbt_project\\logs'}
+[0m10:14:05.369793 [error] [MainThread]: [[31mERROR[0m]: Encountered an error:
+cannot import name 'Credentials' from 'dbt.adapters.base' (C:\Users\padma\miniconda3\envs\dip-pipeline\Lib\site-packages\dbt\adapters\base\__init__.py)
+[0m10:14:05.374060 [error] [MainThread]: Traceback (most recent call last):
+  File "C:\Users\padma\miniconda3\envs\dip-pipeline\Lib\site-packages\dbt\cli\requires.py", line 198, in wrapper
+    result, success = func(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\padma\miniconda3\envs\dip-pipeline\Lib\site-packages\dbt\cli\requires.py", line 144, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\padma\miniconda3\envs\dip-pipeline\Lib\site-packages\dbt\cli\requires.py", line 291, in wrapper
+    profile = load_profile(flags.PROJECT_DIR, flags.VARS, flags.PROFILE, flags.TARGET, threads)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\padma\miniconda3\envs\dip-pipeline\Lib\site-packages\dbt\config\runtime.py", line 98, in load_profile
+    profile = Profile.render(
+              ^^^^^^^^^^^^^^^
+  File "C:\Users\padma\miniconda3\envs\dip-pipeline\Lib\site-packages\dbt\config\profile.py", line 404, in render
+    return cls.from_raw_profiles(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\padma\miniconda3\envs\dip-pipeline\Lib\site-packages\dbt\config\profile.py", line 370, in from_raw_profiles
+    return cls.from_raw_profile_info(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\padma\miniconda3\envs\dip-pipeline\Lib\site-packages\dbt\config\profile.py", line 326, in from_raw_profile_info
+    credentials: Credentials = cls._credentials_from_profile(
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\padma\miniconda3\envs\dip-pipeline\Lib\site-packages\dbt\config\profile.py", line 150, in _credentials_from_profile
+    cls = load_plugin(typename)
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\padma\miniconda3\envs\dip-pipeline\Lib\site-packages\dbt\adapters\factory.py", line 239, in load_plugin
+    return FACTORY.load_plugin(name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\padma\miniconda3\envs\dip-pipeline\Lib\site-packages\dbt\adapters\factory.py", line 68, in load_plugin
+    mod: Any = import_module("." + name, "dbt.adapters")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\padma\miniconda3\envs\dip-pipeline\Lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1204, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1147, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "C:\Users\padma\miniconda3\envs\dip-pipeline\Lib\site-packages\dbt\adapters\sqlite\__init__.py", line 1, in <module>
+    from dbt.adapters.sqlite.connections import SQLiteConnectionManager
+  File "C:\Users\padma\miniconda3\envs\dip-pipeline\Lib\site-packages\dbt\adapters\sqlite\connections.py", line 10, in <module>
+    from dbt.adapters.base import Credentials
+ImportError: cannot import name 'Credentials' from 'dbt.adapters.base' (C:\Users\padma\miniconda3\envs\dip-pipeline\Lib\site-packages\dbt\adapters\base\__init__.py)
+
+[0m10:14:05.376773 [debug] [MainThread]: Command `dbt run` failed at 10:14:05.376773 after 0.17 seconds
+[0m10:14:05.377773 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002540D192390>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002540CFEE2D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002540D09EAD0>]}
+[0m10:14:05.379487 [debug] [MainThread]: Flushing usage events
+[0m10:14:06.189480 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m10:15:59.382710 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000265F6797BD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000265F676F7D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000265F676FA90>]}
+
+
+============================== 10:15:59.382710 | 5d1a7cfc-946c-4e99-a9dc-17e75bd6d81f ==============================
+[0m10:15:59.382710 [info ] [MainThread]: Running with dbt=1.10.13
+[0m10:15:59.382710 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'empty': 'False', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'profiles_dir': 'C:\\Users\\padma\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'indirect_selection': 'eager', 'use_colors': 'True', 'invocation_command': 'dbt run', 'use_experimental_parser': 'False', 'log_path': 'C:\\Users\\padma\\Desktop\\CaseStudy\\dbt_project\\logs'}
+[0m10:15:59.658589 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '5d1a7cfc-946c-4e99-a9dc-17e75bd6d81f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000265F69068D0>]}
+[0m10:15:59.753883 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '5d1a7cfc-946c-4e99-a9dc-17e75bd6d81f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000265F479E4D0>]}
+[0m10:15:59.753883 [info ] [MainThread]: Registered adapter: sqlite=1.10.0
+[0m10:16:00.290438 [debug] [MainThread]: checksum: 9f0c81e2574b4ff463f3d16d080df83c6982fc0372c9feeacae0504ac9ea3ffe, vars: {}, profile: , target: , version: 1.10.13
+[0m10:16:00.292447 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m10:16:00.292447 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '5d1a7cfc-946c-4e99-a9dc-17e75bd6d81f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000265F693C610>]}
+[0m10:16:02.155711 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '5d1a7cfc-946c-4e99-a9dc-17e75bd6d81f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000265F68FD2D0>]}
+[0m10:16:02.261356 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\padma\Desktop\CaseStudy\dbt_project\target\manifest.json
+[0m10:16:02.277909 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\padma\Desktop\CaseStudy\dbt_project\target\semantic_manifest.json
+[0m10:16:02.304403 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '5d1a7cfc-946c-4e99-a9dc-17e75bd6d81f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000265F716BDD0>]}
+[0m10:16:02.306411 [info ] [MainThread]: Found 4 models, 3 data tests, 2 sources, 416 macros
+[0m10:16:02.306411 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '5d1a7cfc-946c-4e99-a9dc-17e75bd6d81f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000265F676CD10>]}
+[0m10:16:02.308417 [info ] [MainThread]: 
+[0m10:16:02.310424 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m10:16:02.310424 [info ] [MainThread]: 
+[0m10:16:02.312436 [debug] [MainThread]: Acquiring new sqlite connection 'master'
+[0m10:16:02.319899 [debug] [ThreadPool]: Acquiring new sqlite connection 'list_database'
+[0m10:16:02.522079 [debug] [ThreadPool]: Using sqlite connection "list_database"
+[0m10:16:02.522079 [debug] [ThreadPool]: On list_database: BEGIN
+[0m10:16:02.522079 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m10:16:02.522079 [debug] [ThreadPool]: SQL status: OK in 0.002 seconds
+[0m10:16:02.522079 [debug] [ThreadPool]: Using sqlite connection "list_database"
+[0m10:16:02.522079 [debug] [ThreadPool]: On list_database: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "dip_rentenpolitik", "target_name": "dev", "connection_name": "list_database"} */
+
+        pragma database_list
+    
+[0m10:16:02.522079 [debug] [ThreadPool]: SQL status: OK in 0.002 seconds
+[0m10:16:02.537905 [debug] [ThreadPool]: On list_database: ROLLBACK
+[0m10:16:02.537905 [debug] [ThreadPool]: On list_database: Close
+[0m10:16:02.537905 [debug] [ThreadPool]: Using sqlite connection "list_database"
+[0m10:16:02.537905 [debug] [ThreadPool]: On list_database: BEGIN
+[0m10:16:02.537905 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m10:16:02.537905 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m10:16:02.537905 [debug] [ThreadPool]: Using sqlite connection "list_database"
+[0m10:16:02.537905 [debug] [ThreadPool]: On list_database: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "dip_rentenpolitik", "target_name": "dev", "connection_name": "list_database"} */
+
+        pragma database_list
+    
+[0m10:16:02.537905 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m10:16:02.537905 [debug] [ThreadPool]: On list_database: ROLLBACK
+[0m10:16:02.537905 [debug] [ThreadPool]: On list_database: Close
+[0m10:16:02.537905 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_database, now create_database_main_staging)
+[0m10:16:02.537905 [debug] [ThreadPool]: Creating schema "database: "database"
+schema: "main_staging"
+"
+[0m10:16:02.553687 [debug] [ThreadPool]: Using sqlite connection "create_database_main_staging"
+[0m10:16:02.553687 [debug] [ThreadPool]: On create_database_main_staging: BEGIN
+[0m10:16:02.553687 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m10:16:02.553687 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m10:16:02.553687 [debug] [ThreadPool]: Using sqlite connection "create_database_main_staging"
+[0m10:16:02.553687 [debug] [ThreadPool]: On create_database_main_staging: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "dip_rentenpolitik", "target_name": "dev", "connection_name": "create_database_main_staging"} */
+attach database './main_staging.db' as main_staging
+[0m10:16:02.553687 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m10:16:02.553687 [debug] [ThreadPool]: On create_database_main_staging: COMMIT
+[0m10:16:02.553687 [debug] [ThreadPool]: Using sqlite connection "create_database_main_staging"
+[0m10:16:02.553687 [debug] [ThreadPool]: On create_database_main_staging: COMMIT
+[0m10:16:02.553687 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m10:16:02.553687 [debug] [ThreadPool]: On create_database_main_staging: Close
+[0m10:16:02.553687 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_database_main_staging, now create_database_main_marts)
+[0m10:16:02.553687 [debug] [ThreadPool]: Creating schema "database: "database"
+schema: "main_marts"
+"
+[0m10:16:02.569410 [debug] [ThreadPool]: Using sqlite connection "create_database_main_marts"
+[0m10:16:02.569410 [debug] [ThreadPool]: On create_database_main_marts: BEGIN
+[0m10:16:02.569410 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m10:16:02.569410 [debug] [ThreadPool]: SQL status: OK in 0.002 seconds
+[0m10:16:02.569410 [debug] [ThreadPool]: Using sqlite connection "create_database_main_marts"
+[0m10:16:02.569410 [debug] [ThreadPool]: On create_database_main_marts: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "dip_rentenpolitik", "target_name": "dev", "connection_name": "create_database_main_marts"} */
+attach database './main_marts.db' as main_marts
+[0m10:16:02.569410 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m10:16:02.569410 [debug] [ThreadPool]: On create_database_main_marts: COMMIT
+[0m10:16:02.569410 [debug] [ThreadPool]: Using sqlite connection "create_database_main_marts"
+[0m10:16:02.569410 [debug] [ThreadPool]: On create_database_main_marts: COMMIT
+[0m10:16:02.569410 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m10:16:02.569410 [debug] [ThreadPool]: On create_database_main_marts: Close
+[0m10:16:02.569410 [debug] [ThreadPool]: Acquiring new sqlite connection 'list_database_main_staging'
+[0m10:16:02.585404 [debug] [ThreadPool]: Using sqlite connection "list_database_main_staging"
+[0m10:16:02.585404 [debug] [ThreadPool]: On list_database_main_staging: BEGIN
+[0m10:16:02.585404 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m10:16:02.585404 [debug] [ThreadPool]: SQL status: OK in 0.002 seconds
+[0m10:16:02.585404 [debug] [ThreadPool]: Using sqlite connection "list_database_main_staging"
+[0m10:16:02.585404 [debug] [ThreadPool]: On list_database_main_staging: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "dip_rentenpolitik", "target_name": "dev", "connection_name": "list_database_main_staging"} */
+
+        pragma database_list
+    
+[0m10:16:02.585404 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m10:16:02.585404 [debug] [ThreadPool]: Using sqlite connection "list_database_main_staging"
+[0m10:16:02.585404 [debug] [ThreadPool]: On list_database_main_staging: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "dip_rentenpolitik", "target_name": "dev", "connection_name": "list_database_main_staging"} */
+
+            SELECT
+                'database' as database
+                ,name
+                ,'main_staging' AS schema
+                ,type as data_type
+            FROM
+                main_staging.sqlite_master
+            WHERE
+                name NOT LIKE 'sqlite_%'
+        
+[0m10:16:02.585404 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m10:16:02.585404 [debug] [ThreadPool]: On list_database_main_staging: ROLLBACK
+[0m10:16:02.585404 [debug] [ThreadPool]: On list_database_main_staging: Close
+[0m10:16:02.585404 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_database_main_staging, now list_database_main_marts)
+[0m10:16:02.601200 [debug] [ThreadPool]: Using sqlite connection "list_database_main_marts"
+[0m10:16:02.603808 [debug] [ThreadPool]: On list_database_main_marts: BEGIN
+[0m10:16:02.603808 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m10:16:02.603808 [debug] [ThreadPool]: SQL status: OK in 0.002 seconds
+[0m10:16:02.606621 [debug] [ThreadPool]: Using sqlite connection "list_database_main_marts"
+[0m10:16:02.606621 [debug] [ThreadPool]: On list_database_main_marts: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "dip_rentenpolitik", "target_name": "dev", "connection_name": "list_database_main_marts"} */
+
+        pragma database_list
+    
+[0m10:16:02.606621 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m10:16:02.606621 [debug] [ThreadPool]: Using sqlite connection "list_database_main_marts"
+[0m10:16:02.606621 [debug] [ThreadPool]: On list_database_main_marts: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "dip_rentenpolitik", "target_name": "dev", "connection_name": "list_database_main_marts"} */
+
+            SELECT
+                'database' as database
+                ,name
+                ,'main_marts' AS schema
+                ,type as data_type
+            FROM
+                main_marts.sqlite_master
+            WHERE
+                name NOT LIKE 'sqlite_%'
+        
+[0m10:16:02.606621 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m10:16:02.606621 [debug] [ThreadPool]: On list_database_main_marts: ROLLBACK
+[0m10:16:02.606621 [debug] [ThreadPool]: On list_database_main_marts: Close
+[0m10:16:02.606621 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '5d1a7cfc-946c-4e99-a9dc-17e75bd6d81f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000265F6EA2E10>]}
+[0m10:16:02.606621 [debug] [MainThread]: Using sqlite connection "master"
+[0m10:16:02.606621 [debug] [MainThread]: On master: BEGIN
+[0m10:16:02.606621 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m10:16:02.617298 [debug] [MainThread]: SQL status: OK in 0.002 seconds
+[0m10:16:02.617298 [debug] [MainThread]: On master: COMMIT
+[0m10:16:02.619306 [debug] [MainThread]: Using sqlite connection "master"
+[0m10:16:02.619306 [debug] [MainThread]: On master: COMMIT
+[0m10:16:02.619306 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m10:16:02.619306 [debug] [MainThread]: On master: Close
+[0m10:16:02.619306 [debug] [Thread-1 (]: Began running node model.dip_rentenpolitik.stg_dip__vorgaenge
+[0m10:16:02.619306 [info ] [Thread-1 (]: 1 of 4 START sql view model main_staging.stg_dip__vorgaenge .................... [RUN]
+[0m10:16:02.619306 [debug] [Thread-1 (]: Acquiring new sqlite connection 'model.dip_rentenpolitik.stg_dip__vorgaenge'
+[0m10:16:02.619306 [debug] [Thread-1 (]: Began compiling node model.dip_rentenpolitik.stg_dip__vorgaenge
+[0m10:16:02.633158 [debug] [Thread-1 (]: Writing injected SQL for node "model.dip_rentenpolitik.stg_dip__vorgaenge"
+[0m10:16:02.633158 [debug] [Thread-1 (]: Began executing node model.dip_rentenpolitik.stg_dip__vorgaenge
+[0m10:16:02.664686 [debug] [Thread-1 (]: Writing runtime sql for node "model.dip_rentenpolitik.stg_dip__vorgaenge"
+[0m10:16:02.664686 [debug] [Thread-1 (]: Using sqlite connection "model.dip_rentenpolitik.stg_dip__vorgaenge"
+[0m10:16:02.664686 [debug] [Thread-1 (]: On model.dip_rentenpolitik.stg_dip__vorgaenge: BEGIN
+[0m10:16:02.664686 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m10:16:02.664686 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m10:16:02.664686 [debug] [Thread-1 (]: Using sqlite connection "model.dip_rentenpolitik.stg_dip__vorgaenge"
+[0m10:16:02.664686 [debug] [Thread-1 (]: On model.dip_rentenpolitik.stg_dip__vorgaenge: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "dip_rentenpolitik", "target_name": "dev", "node_id": "model.dip_rentenpolitik.stg_dip__vorgaenge"} */
+
+    
+    create view main_staging."stg_dip__vorgaenge" as
+    -- stg_dip__vorgaenge.sql
+--
+-- Deduplicates the append-only raw_documents table down to the latest
+-- known state per Vorgang (legislative procedure), and flattens the JSON
+-- payload into typed columns. Scalar fields are extracted directly;
+-- array fields (initiative, sachgebiet, deskriptor) are kept as raw JSON
+-- text here and unnested into separate bridge tables below, since a
+-- Vorgang can have zero, one, or many of each -- flattening them into
+-- this table would either lose information or require pivoting.
+--
+-- Field names/types are taken from the live DIP Swagger schema for
+-- GET /vorgang (id, typ, beratungsstand, vorgangstyp, wahlperiode,
+-- initiative, datum, aktualisiert, titel, abstract, sachgebiet,
+-- deskriptor, gesta, ...).
+
+with raw as (
+    select *
+    from main."raw_documents"
+    where resource = 'vorgang'
+),
+
+-- Keep only the most recently fetched payload per Vorgang. The raw table
+-- is intentionally append-only (see dip_client.py docstring); this is
+-- where "latest known state" gets defined.
+latest_fetch as (
+    select
+        dip_id,
+        max(fetched_at) as fetched_at
+    from raw
+    group by dip_id
+),
+
+deduped as (
+    select raw.*
+    from raw
+    inner join latest_fetch
+        on raw.dip_id = latest_fetch.dip_id
+        and raw.fetched_at = latest_fetch.fetched_at
+)
+
+select
+    cast(json_extract(payload_json, '$.id') as integer)          as vorgang_id,
+    json_extract(payload_json, '$.titel')                        as titel,
+    json_extract(payload_json, '$.abstract')                     as abstract,
+    json_extract(payload_json, '$.vorgangstyp')                  as vorgangstyp,
+    json_extract(payload_json, '$.beratungsstand')                as beratungsstand,
+    cast(json_extract(payload_json, '$.wahlperiode') as integer) as wahlperiode,
+    json_extract(payload_json, '$.datum')                        as datum,
+    json_extract(payload_json, '$.aktualisiert')                 as aktualisiert,
+    json_extract(payload_json, '$.gesta')                        as gesta,
+    -- kept as raw JSON arrays; unnested in stg_dip__vorgang_sachgebiete
+    json_extract(payload_json, '$.initiative')                   as initiative_json,
+    json_extract(payload_json, '$.sachgebiet')                   as sachgebiet_json,
+    json_extract(payload_json, '$.deskriptor')                   as deskriptor_json,
+    fetched_at
+from deduped;
+[0m10:16:02.664686 [debug] [Thread-1 (]: On model.dip_rentenpolitik.stg_dip__vorgaenge: ROLLBACK
+[0m10:16:02.664686 [debug] [Thread-1 (]: On model.dip_rentenpolitik.stg_dip__vorgaenge: Close
+[0m10:16:02.677956 [debug] [Thread-1 (]: SQLite adapter: sqlite3 error: view "stg_dip__vorgaenge" cannot reference objects in database main
+[0m10:16:02.687186 [debug] [Thread-1 (]: Database Error in model stg_dip__vorgaenge (models\staging\stg_dip__vorgaenge.sql)
+  view "stg_dip__vorgaenge" cannot reference objects in database main
+  compiled code at target\run\dip_rentenpolitik\models\staging\stg_dip__vorgaenge.sql
+[0m10:16:02.690186 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '5d1a7cfc-946c-4e99-a9dc-17e75bd6d81f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000265F6D2C6D0>]}
+[0m10:16:02.691185 [error] [Thread-1 (]: 1 of 4 ERROR creating sql view model main_staging.stg_dip__vorgaenge ........... [[31mERROR[0m in 0.07s]
+[0m10:16:02.692193 [debug] [Thread-1 (]: Finished running node model.dip_rentenpolitik.stg_dip__vorgaenge
+[0m10:16:02.693199 [debug] [Thread-4 (]: Marking all children of 'model.dip_rentenpolitik.stg_dip__vorgaenge' to be skipped because of status 'error'.  Reason: Database Error in model stg_dip__vorgaenge (models\staging\stg_dip__vorgaenge.sql)
+  view "stg_dip__vorgaenge" cannot reference objects in database main
+  compiled code at target\run\dip_rentenpolitik\models\staging\stg_dip__vorgaenge.sql.
+[0m10:16:02.695894 [debug] [Thread-1 (]: Began running node model.dip_rentenpolitik.stg_dip__vorgang_initiativen
+[0m10:16:02.696890 [info ] [Thread-1 (]: 2 of 4 SKIP relation main_staging.stg_dip__vorgang_initiativen ................. [[33mSKIP[0m]
+[0m10:16:02.697888 [debug] [Thread-1 (]: Finished running node model.dip_rentenpolitik.stg_dip__vorgang_initiativen
+[0m10:16:02.699214 [debug] [Thread-1 (]: Began running node model.dip_rentenpolitik.stg_dip__vorgang_sachgebiete
+[0m10:16:02.700336 [info ] [Thread-1 (]: 3 of 4 SKIP relation main_staging.stg_dip__vorgang_sachgebiete ................. [[33mSKIP[0m]
+[0m10:16:02.701361 [debug] [Thread-1 (]: Finished running node model.dip_rentenpolitik.stg_dip__vorgang_sachgebiete
+[0m10:16:02.702360 [debug] [Thread-1 (]: Began running node model.dip_rentenpolitik.mart_rentenpolitik_monitor
+[0m10:16:02.703361 [info ] [Thread-1 (]: 4 of 4 SKIP relation main_marts.mart_rentenpolitik_monitor ..................... [[33mSKIP[0m]
+[0m10:16:02.704360 [debug] [Thread-1 (]: Finished running node model.dip_rentenpolitik.mart_rentenpolitik_monitor
+[0m10:16:02.705356 [debug] [MainThread]: Using sqlite connection "master"
+[0m10:16:02.706868 [debug] [MainThread]: On master: BEGIN
+[0m10:16:02.706868 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m10:16:02.709132 [debug] [MainThread]: SQL status: OK in 0.002 seconds
+[0m10:16:02.710158 [debug] [MainThread]: On master: COMMIT
+[0m10:16:02.710158 [debug] [MainThread]: Using sqlite connection "master"
+[0m10:16:02.711159 [debug] [MainThread]: On master: COMMIT
+[0m10:16:02.712463 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m10:16:02.712463 [debug] [MainThread]: On master: Close
+[0m10:16:02.713343 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m10:16:02.714578 [debug] [MainThread]: Connection 'create_database_main_marts' was properly closed.
+[0m10:16:02.715581 [debug] [MainThread]: Connection 'list_database_main_marts' was properly closed.
+[0m10:16:02.715581 [debug] [MainThread]: Connection 'model.dip_rentenpolitik.stg_dip__vorgaenge' was properly closed.
+[0m10:16:02.716582 [info ] [MainThread]: 
+[0m10:16:02.717581 [info ] [MainThread]: Finished running 1 table model, 3 view models in 0 hours 0 minutes and 0.41 seconds (0.41s).
+[0m10:16:02.719019 [debug] [MainThread]: Command end result
+[0m10:16:02.757809 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\padma\Desktop\CaseStudy\dbt_project\target\manifest.json
+[0m10:16:02.764865 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\padma\Desktop\CaseStudy\dbt_project\target\semantic_manifest.json
+[0m10:16:02.773804 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\Users\padma\Desktop\CaseStudy\dbt_project\target\run_results.json
+[0m10:16:02.777334 [info ] [MainThread]: 
+[0m10:16:02.779076 [info ] [MainThread]: [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[0m10:16:02.780068 [info ] [MainThread]: 
+[0m10:16:02.781068 [error] [MainThread]: [31mFailure in model stg_dip__vorgaenge (models\staging\stg_dip__vorgaenge.sql)[0m
+[0m10:16:02.782067 [error] [MainThread]:   Database Error in model stg_dip__vorgaenge (models\staging\stg_dip__vorgaenge.sql)
+  view "stg_dip__vorgaenge" cannot reference objects in database main
+  compiled code at target\run\dip_rentenpolitik\models\staging\stg_dip__vorgaenge.sql
+[0m10:16:02.784079 [info ] [MainThread]: 
+[0m10:16:02.785061 [info ] [MainThread]:   compiled code at target\compiled\dip_rentenpolitik\models\staging\stg_dip__vorgaenge.sql
+[0m10:16:02.786062 [info ] [MainThread]: 
+[0m10:16:02.787063 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=1 SKIP=3 NO-OP=0 TOTAL=4
+[0m10:16:02.789062 [debug] [MainThread]: Command `dbt run` failed at 10:16:02.789062 after 3.53 seconds
+[0m10:16:02.790062 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000265F56DBAD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000265F5170A90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000265EDB3E2D0>]}
+[0m10:16:02.791061 [debug] [MainThread]: Flushing usage events
+[0m10:16:03.687985 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m10:17:49.324330 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027D49A6EF10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027D49A6E910>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027D49A6C250>]}
+
+
+============================== 10:17:49.331312 | 172df049-1e89-4cfd-b47f-f1fed245fdfd ==============================
+[0m10:17:49.331312 [info ] [MainThread]: Running with dbt=1.10.13
+[0m10:17:49.331312 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'empty': 'False', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'profiles_dir': 'C:\\Users\\padma\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'invocation_command': 'dbt run', 'use_colors': 'True', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'log_path': 'C:\\Users\\padma\\Desktop\\CaseStudy\\dbt_project\\logs'}
+[0m10:17:49.563436 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '172df049-1e89-4cfd-b47f-f1fed245fdfd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027D49C5EA50>]}
+[0m10:17:49.658185 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '172df049-1e89-4cfd-b47f-f1fed245fdfd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027D49BB0790>]}
+[0m10:17:49.660193 [info ] [MainThread]: Registered adapter: sqlite=1.10.0
+[0m10:17:50.152090 [debug] [MainThread]: checksum: 9f0c81e2574b4ff463f3d16d080df83c6982fc0372c9feeacae0504ac9ea3ffe, vars: {}, profile: , target: , version: 1.10.13
+[0m10:17:50.154097 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m10:17:50.154097 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '172df049-1e89-4cfd-b47f-f1fed245fdfd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027D49AD4110>]}
+[0m10:17:52.001935 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '172df049-1e89-4cfd-b47f-f1fed245fdfd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027D4A03B7D0>]}
+[0m10:17:52.126129 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\padma\Desktop\CaseStudy\dbt_project\target\manifest.json
+[0m10:17:52.132453 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\padma\Desktop\CaseStudy\dbt_project\target\semantic_manifest.json
+[0m10:17:52.175510 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '172df049-1e89-4cfd-b47f-f1fed245fdfd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027D4A463710>]}
+[0m10:17:52.175510 [info ] [MainThread]: Found 4 models, 3 data tests, 2 sources, 416 macros
+[0m10:17:52.177526 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '172df049-1e89-4cfd-b47f-f1fed245fdfd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027D45928E50>]}
+[0m10:17:52.177526 [info ] [MainThread]: 
+[0m10:17:52.177526 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m10:17:52.177526 [info ] [MainThread]: 
+[0m10:17:52.177526 [debug] [MainThread]: Acquiring new sqlite connection 'master'
+[0m10:17:52.194774 [debug] [ThreadPool]: Acquiring new sqlite connection 'list_database'
+[0m10:17:52.302911 [debug] [ThreadPool]: Using sqlite connection "list_database"
+[0m10:17:52.302911 [debug] [ThreadPool]: On list_database: BEGIN
+[0m10:17:52.311466 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m10:17:52.315480 [debug] [ThreadPool]: SQL status: OK in 0.004 seconds
+[0m10:17:52.315480 [debug] [ThreadPool]: Using sqlite connection "list_database"
+[0m10:17:52.315480 [debug] [ThreadPool]: On list_database: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "dip_rentenpolitik", "target_name": "dev", "connection_name": "list_database"} */
+
+        pragma database_list
+    
+[0m10:17:52.317485 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m10:17:52.319491 [debug] [ThreadPool]: On list_database: ROLLBACK
+[0m10:17:52.321496 [debug] [ThreadPool]: On list_database: Close
+[0m10:17:52.323502 [debug] [ThreadPool]: Acquiring new sqlite connection 'list_database_main'
+[0m10:17:52.335282 [debug] [ThreadPool]: Using sqlite connection "list_database_main"
+[0m10:17:52.335282 [debug] [ThreadPool]: On list_database_main: BEGIN
+[0m10:17:52.337288 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m10:17:52.339294 [debug] [ThreadPool]: SQL status: OK in 0.002 seconds
+[0m10:17:52.339294 [debug] [ThreadPool]: Using sqlite connection "list_database_main"
+[0m10:17:52.339294 [debug] [ThreadPool]: On list_database_main: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "dip_rentenpolitik", "target_name": "dev", "connection_name": "list_database_main"} */
+
+        pragma database_list
+    
+[0m10:17:52.341299 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m10:17:52.343047 [debug] [ThreadPool]: Using sqlite connection "list_database_main"
+[0m10:17:52.343047 [debug] [ThreadPool]: On list_database_main: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "dip_rentenpolitik", "target_name": "dev", "connection_name": "list_database_main"} */
+
+            SELECT
+                'database' as database
+                ,name
+                ,'main' AS schema
+                ,type as data_type
+            FROM
+                main.sqlite_master
+            WHERE
+                name NOT LIKE 'sqlite_%'
+        
+[0m10:17:52.343047 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m10:17:52.343047 [debug] [ThreadPool]: On list_database_main: ROLLBACK
+[0m10:17:52.347843 [debug] [ThreadPool]: On list_database_main: Close
+[0m10:17:52.347843 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '172df049-1e89-4cfd-b47f-f1fed245fdfd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027D4A28D790>]}
+[0m10:17:52.347843 [debug] [MainThread]: Using sqlite connection "master"
+[0m10:17:52.347843 [debug] [MainThread]: On master: BEGIN
+[0m10:17:52.347843 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m10:17:52.352221 [debug] [MainThread]: SQL status: OK in 0.002 seconds
+[0m10:17:52.352221 [debug] [MainThread]: On master: COMMIT
+[0m10:17:52.352221 [debug] [MainThread]: Using sqlite connection "master"
+[0m10:17:52.352221 [debug] [MainThread]: On master: COMMIT
+[0m10:17:52.352221 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m10:17:52.352221 [debug] [MainThread]: On master: Close
+[0m10:17:52.358764 [debug] [Thread-1 (]: Began running node model.dip_rentenpolitik.stg_dip__vorgaenge
+[0m10:17:52.358764 [info ] [Thread-1 (]: 1 of 4 START sql view model main.stg_dip__vorgaenge ............................ [RUN]
+[0m10:17:52.358764 [debug] [Thread-1 (]: Acquiring new sqlite connection 'model.dip_rentenpolitik.stg_dip__vorgaenge'
+[0m10:17:52.358764 [debug] [Thread-1 (]: Began compiling node model.dip_rentenpolitik.stg_dip__vorgaenge
+[0m10:17:52.374643 [debug] [Thread-1 (]: Writing injected SQL for node "model.dip_rentenpolitik.stg_dip__vorgaenge"
+[0m10:17:52.378464 [debug] [Thread-1 (]: Began executing node model.dip_rentenpolitik.stg_dip__vorgaenge
+[0m10:17:52.397105 [debug] [Thread-1 (]: Writing runtime sql for node "model.dip_rentenpolitik.stg_dip__vorgaenge"
+[0m10:17:52.397105 [debug] [Thread-1 (]: Using sqlite connection "model.dip_rentenpolitik.stg_dip__vorgaenge"
+[0m10:17:52.401336 [debug] [Thread-1 (]: On model.dip_rentenpolitik.stg_dip__vorgaenge: BEGIN
+[0m10:17:52.401336 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m10:17:52.404205 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m10:17:52.404205 [debug] [Thread-1 (]: Using sqlite connection "model.dip_rentenpolitik.stg_dip__vorgaenge"
+[0m10:17:52.404205 [debug] [Thread-1 (]: On model.dip_rentenpolitik.stg_dip__vorgaenge: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "dip_rentenpolitik", "target_name": "dev", "node_id": "model.dip_rentenpolitik.stg_dip__vorgaenge"} */
+
+    
+    create view main."stg_dip__vorgaenge" as
+    -- stg_dip__vorgaenge.sql
+--
+-- Deduplicates the append-only raw_documents table down to the latest
+-- known state per Vorgang (legislative procedure), and flattens the JSON
+-- payload into typed columns. Scalar fields are extracted directly;
+-- array fields (initiative, sachgebiet, deskriptor) are kept as raw JSON
+-- text here and unnested into separate bridge tables below, since a
+-- Vorgang can have zero, one, or many of each -- flattening them into
+-- this table would either lose information or require pivoting.
+--
+-- Field names/types are taken from the live DIP Swagger schema for
+-- GET /vorgang (id, typ, beratungsstand, vorgangstyp, wahlperiode,
+-- initiative, datum, aktualisiert, titel, abstract, sachgebiet,
+-- deskriptor, gesta, ...).
+
+with raw as (
+    select *
+    from main."raw_documents"
+    where resource = 'vorgang'
+),
+
+-- Keep only the most recently fetched payload per Vorgang. The raw table
+-- is intentionally append-only (see dip_client.py docstring); this is
+-- where "latest known state" gets defined.
+latest_fetch as (
+    select
+        dip_id,
+        max(fetched_at) as fetched_at
+    from raw
+    group by dip_id
+),
+
+deduped as (
+    select raw.*
+    from raw
+    inner join latest_fetch
+        on raw.dip_id = latest_fetch.dip_id
+        and raw.fetched_at = latest_fetch.fetched_at
+)
+
+select
+    cast(json_extract(payload_json, '$.id') as integer)          as vorgang_id,
+    json_extract(payload_json, '$.titel')                        as titel,
+    json_extract(payload_json, '$.abstract')                     as abstract,
+    json_extract(payload_json, '$.vorgangstyp')                  as vorgangstyp,
+    json_extract(payload_json, '$.beratungsstand')                as beratungsstand,
+    cast(json_extract(payload_json, '$.wahlperiode') as integer) as wahlperiode,
+    json_extract(payload_json, '$.datum')                        as datum,
+    json_extract(payload_json, '$.aktualisiert')                 as aktualisiert,
+    json_extract(payload_json, '$.gesta')                        as gesta,
+    -- kept as raw JSON arrays; unnested in stg_dip__vorgang_sachgebiete
+    json_extract(payload_json, '$.initiative')                   as initiative_json,
+    json_extract(payload_json, '$.sachgebiet')                   as sachgebiet_json,
+    json_extract(payload_json, '$.deskriptor')                   as deskriptor_json,
+    fetched_at
+from deduped;
+[0m10:17:52.408729 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m10:17:52.416584 [debug] [Thread-1 (]: On model.dip_rentenpolitik.stg_dip__vorgaenge: COMMIT
+[0m10:17:52.417584 [debug] [Thread-1 (]: Using sqlite connection "model.dip_rentenpolitik.stg_dip__vorgaenge"
+[0m10:17:52.417584 [debug] [Thread-1 (]: On model.dip_rentenpolitik.stg_dip__vorgaenge: COMMIT
+[0m10:17:52.420822 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m10:17:52.425840 [debug] [Thread-1 (]: On model.dip_rentenpolitik.stg_dip__vorgaenge: Close
+[0m10:17:52.428841 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '172df049-1e89-4cfd-b47f-f1fed245fdfd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027D4A056850>]}
+[0m10:17:52.430214 [info ] [Thread-1 (]: 1 of 4 OK created sql view model main.stg_dip__vorgaenge ....................... [[32mOK[0m in 0.07s]
+[0m10:17:52.431266 [debug] [Thread-1 (]: Finished running node model.dip_rentenpolitik.stg_dip__vorgaenge
+[0m10:17:52.432266 [debug] [Thread-1 (]: Began running node model.dip_rentenpolitik.stg_dip__vorgang_initiativen
+[0m10:17:52.433266 [info ] [Thread-1 (]: 2 of 4 START sql view model main.stg_dip__vorgang_initiativen .................. [RUN]
+[0m10:17:52.434266 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.dip_rentenpolitik.stg_dip__vorgaenge, now model.dip_rentenpolitik.stg_dip__vorgang_initiativen)
+[0m10:17:52.435266 [debug] [Thread-1 (]: Began compiling node model.dip_rentenpolitik.stg_dip__vorgang_initiativen
+[0m10:17:52.441265 [debug] [Thread-1 (]: Writing injected SQL for node "model.dip_rentenpolitik.stg_dip__vorgang_initiativen"
+[0m10:17:52.442267 [debug] [Thread-1 (]: Began executing node model.dip_rentenpolitik.stg_dip__vorgang_initiativen
+[0m10:17:52.448814 [debug] [Thread-1 (]: Writing runtime sql for node "model.dip_rentenpolitik.stg_dip__vorgang_initiativen"
+[0m10:17:52.450838 [debug] [Thread-1 (]: Using sqlite connection "model.dip_rentenpolitik.stg_dip__vorgang_initiativen"
+[0m10:17:52.451892 [debug] [Thread-1 (]: On model.dip_rentenpolitik.stg_dip__vorgang_initiativen: BEGIN
+[0m10:17:52.453068 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m10:17:52.455069 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m10:17:52.456069 [debug] [Thread-1 (]: Using sqlite connection "model.dip_rentenpolitik.stg_dip__vorgang_initiativen"
+[0m10:17:52.456540 [debug] [Thread-1 (]: On model.dip_rentenpolitik.stg_dip__vorgang_initiativen: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "dip_rentenpolitik", "target_name": "dev", "node_id": "model.dip_rentenpolitik.stg_dip__vorgang_initiativen"} */
+
+    
+    create view main."stg_dip__vorgang_initiativen" as
+    -- stg_dip__vorgang_initiativen.sql
+--
+-- Unnests the `initiative` array (who introduced/originated the procedure,
+-- e.g. a Fraktion or the Bundesregierung) into one row per
+-- (vorgang_id, initiative). Relevant for Public Affairs work: knowing
+-- *who* is driving a procedure is often as important as its status.
+
+select
+    v.vorgang_id,
+    je.value as initiative
+from main."stg_dip__vorgaenge" v
+join json_each(v.initiative_json) je
+where v.initiative_json is not null;
+[0m10:17:52.461876 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m10:17:52.464417 [debug] [Thread-1 (]: On model.dip_rentenpolitik.stg_dip__vorgang_initiativen: COMMIT
+[0m10:17:52.464417 [debug] [Thread-1 (]: Using sqlite connection "model.dip_rentenpolitik.stg_dip__vorgang_initiativen"
+[0m10:17:52.465893 [debug] [Thread-1 (]: On model.dip_rentenpolitik.stg_dip__vorgang_initiativen: COMMIT
+[0m10:17:52.469185 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m10:17:52.470513 [debug] [Thread-1 (]: On model.dip_rentenpolitik.stg_dip__vorgang_initiativen: Close
+[0m10:17:52.472519 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '172df049-1e89-4cfd-b47f-f1fed245fdfd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027D4A7C64D0>]}
+[0m10:17:52.472519 [info ] [Thread-1 (]: 2 of 4 OK created sql view model main.stg_dip__vorgang_initiativen ............. [[32mOK[0m in 0.04s]
+[0m10:17:52.472519 [debug] [Thread-1 (]: Finished running node model.dip_rentenpolitik.stg_dip__vorgang_initiativen
+[0m10:17:52.472519 [debug] [Thread-1 (]: Began running node model.dip_rentenpolitik.stg_dip__vorgang_sachgebiete
+[0m10:17:52.477130 [info ] [Thread-1 (]: 3 of 4 START sql view model main.stg_dip__vorgang_sachgebiete .................. [RUN]
+[0m10:17:52.477130 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.dip_rentenpolitik.stg_dip__vorgang_initiativen, now model.dip_rentenpolitik.stg_dip__vorgang_sachgebiete)
+[0m10:17:52.477130 [debug] [Thread-1 (]: Began compiling node model.dip_rentenpolitik.stg_dip__vorgang_sachgebiete
+[0m10:17:52.483657 [debug] [Thread-1 (]: Writing injected SQL for node "model.dip_rentenpolitik.stg_dip__vorgang_sachgebiete"
+[0m10:17:52.485649 [debug] [Thread-1 (]: Began executing node model.dip_rentenpolitik.stg_dip__vorgang_sachgebiete
+[0m10:17:52.489200 [debug] [Thread-1 (]: Writing runtime sql for node "model.dip_rentenpolitik.stg_dip__vorgang_sachgebiete"
+[0m10:17:52.492324 [debug] [Thread-1 (]: Using sqlite connection "model.dip_rentenpolitik.stg_dip__vorgang_sachgebiete"
+[0m10:17:52.495252 [debug] [Thread-1 (]: On model.dip_rentenpolitik.stg_dip__vorgang_sachgebiete: BEGIN
+[0m10:17:52.495252 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m10:17:52.497811 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m10:17:52.501573 [debug] [Thread-1 (]: Using sqlite connection "model.dip_rentenpolitik.stg_dip__vorgang_sachgebiete"
+[0m10:17:52.502080 [debug] [Thread-1 (]: On model.dip_rentenpolitik.stg_dip__vorgang_sachgebiete: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "dip_rentenpolitik", "target_name": "dev", "node_id": "model.dip_rentenpolitik.stg_dip__vorgang_sachgebiete"} */
+
+    
+    create view main."stg_dip__vorgang_sachgebiete" as
+    -- stg_dip__vorgang_sachgebiete.sql
+--
+-- Unnests the `sachgebiet` (topic area) array into one row per
+-- (vorgang_id, sachgebiet), using SQLite's json_each table-valued function.
+-- This is what lets the mart filter/group by topic without string matching
+-- on JSON text.
+
+select
+    v.vorgang_id,
+    je.value as sachgebiet
+from main."stg_dip__vorgaenge" v
+join json_each(v.sachgebiet_json) je
+where v.sachgebiet_json is not null;
+[0m10:17:52.503087 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m10:17:52.504661 [debug] [Thread-1 (]: On model.dip_rentenpolitik.stg_dip__vorgang_sachgebiete: COMMIT
+[0m10:17:52.507498 [debug] [Thread-1 (]: Using sqlite connection "model.dip_rentenpolitik.stg_dip__vorgang_sachgebiete"
+[0m10:17:52.507498 [debug] [Thread-1 (]: On model.dip_rentenpolitik.stg_dip__vorgang_sachgebiete: COMMIT
+[0m10:17:52.512376 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m10:17:52.513447 [debug] [Thread-1 (]: On model.dip_rentenpolitik.stg_dip__vorgang_sachgebiete: Close
+[0m10:17:52.515567 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '172df049-1e89-4cfd-b47f-f1fed245fdfd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027D4A281550>]}
+[0m10:17:52.517555 [info ] [Thread-1 (]: 3 of 4 OK created sql view model main.stg_dip__vorgang_sachgebiete ............. [[32mOK[0m in 0.04s]
+[0m10:17:52.518569 [debug] [Thread-1 (]: Finished running node model.dip_rentenpolitik.stg_dip__vorgang_sachgebiete
+[0m10:17:52.520691 [debug] [Thread-1 (]: Began running node model.dip_rentenpolitik.mart_rentenpolitik_monitor
+[0m10:17:52.521695 [info ] [Thread-1 (]: 4 of 4 START sql table model main.mart_rentenpolitik_monitor ................... [RUN]
+[0m10:17:52.522695 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.dip_rentenpolitik.stg_dip__vorgang_sachgebiete, now model.dip_rentenpolitik.mart_rentenpolitik_monitor)
+[0m10:17:52.523727 [debug] [Thread-1 (]: Began compiling node model.dip_rentenpolitik.mart_rentenpolitik_monitor
+[0m10:17:52.528748 [debug] [Thread-1 (]: Writing injected SQL for node "model.dip_rentenpolitik.mart_rentenpolitik_monitor"
+[0m10:17:52.530958 [debug] [Thread-1 (]: Began executing node model.dip_rentenpolitik.mart_rentenpolitik_monitor
+[0m10:17:52.553304 [debug] [Thread-1 (]: Writing runtime sql for node "model.dip_rentenpolitik.mart_rentenpolitik_monitor"
+[0m10:17:52.557158 [debug] [Thread-1 (]: Using sqlite connection "model.dip_rentenpolitik.mart_rentenpolitik_monitor"
+[0m10:17:52.557158 [debug] [Thread-1 (]: On model.dip_rentenpolitik.mart_rentenpolitik_monitor: BEGIN
+[0m10:17:52.560605 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m10:17:52.564873 [debug] [Thread-1 (]: SQL status: OK in 0.004 seconds
+[0m10:17:52.566883 [debug] [Thread-1 (]: Using sqlite connection "model.dip_rentenpolitik.mart_rentenpolitik_monitor"
+[0m10:17:52.566883 [debug] [Thread-1 (]: On model.dip_rentenpolitik.mart_rentenpolitik_monitor: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "dip_rentenpolitik", "target_name": "dev", "node_id": "model.dip_rentenpolitik.mart_rentenpolitik_monitor"} */
+
+  
+    
+    
+    create  table main."mart_rentenpolitik_monitor"
+    as
+        -- mart_rentenpolitik_monitor.sql
+--
+-- The client-facing deliverable: one row per legislative procedure (Vorgang)
+-- relevant to pension policy, with its current status, originator(s), and
+-- topic tags, ready to sort by most-recently-updated for a monitoring feed.
+--
+-- Initiativen and Sachgebiete are re-aggregated back into comma-separated
+-- text here (via group_concat) because this table is meant to be read
+-- directly by a human/report, not joined further -- one row per Vorgang is
+-- the right grain for that. If a consumer needs to filter/join on a single
+-- topic or initiator, use stg_dip__vorgang_sachgebiete /
+-- stg_dip__vorgang_initiativen directly instead.
+
+with sachgebiete_agg as (
+    select
+        vorgang_id,
+        group_concat(distinct sachgebiet) as sachgebiete
+    from main."stg_dip__vorgang_sachgebiete"
+    group by vorgang_id
+),
+
+initiativen_agg as (
+    select
+        vorgang_id,
+        group_concat(distinct initiative) as initiativen
+    from main."stg_dip__vorgang_initiativen"
+    group by vorgang_id
+)
+
+select
+    v.vorgang_id,
+    v.titel,
+    v.vorgangstyp,
+    v.beratungsstand,
+    v.wahlperiode,
+    v.datum,
+    v.aktualisiert,
+    initiativen_agg.initiativen,
+    sachgebiete_agg.sachgebiete,
+    v.abstract,
+    v.gesta,
+    'https://dip.bundestag.de/vorgang/-/' || v.vorgang_id as dip_url,
+    v.fetched_at as last_ingested_at
+from main."stg_dip__vorgaenge" v
+left join sachgebiete_agg on v.vorgang_id = sachgebiete_agg.vorgang_id
+left join initiativen_agg on v.vorgang_id = initiativen_agg.vorgang_id
+order by v.aktualisiert desc
+
+  
+[0m10:17:52.796956 [debug] [Thread-1 (]: SQL status: OK in 0.232 seconds
+[0m10:17:52.803214 [debug] [Thread-1 (]: On model.dip_rentenpolitik.mart_rentenpolitik_monitor: COMMIT
+[0m10:17:52.803214 [debug] [Thread-1 (]: Using sqlite connection "model.dip_rentenpolitik.mart_rentenpolitik_monitor"
+[0m10:17:52.805222 [debug] [Thread-1 (]: On model.dip_rentenpolitik.mart_rentenpolitik_monitor: COMMIT
+[0m10:17:52.812125 [debug] [Thread-1 (]: SQL status: OK in 0.007 seconds
+[0m10:17:52.814339 [debug] [Thread-1 (]: On model.dip_rentenpolitik.mart_rentenpolitik_monitor: Close
+[0m10:17:52.816041 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '172df049-1e89-4cfd-b47f-f1fed245fdfd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027D4A8A1310>]}
+[0m10:17:52.816041 [info ] [Thread-1 (]: 4 of 4 OK created sql table model main.mart_rentenpolitik_monitor .............. [[32mOK[0m in 0.29s]
+[0m10:17:52.816041 [debug] [Thread-1 (]: Finished running node model.dip_rentenpolitik.mart_rentenpolitik_monitor
+[0m10:17:52.820590 [debug] [MainThread]: Using sqlite connection "master"
+[0m10:17:52.820590 [debug] [MainThread]: On master: BEGIN
+[0m10:17:52.820590 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m10:17:52.823831 [debug] [MainThread]: SQL status: OK in 0.002 seconds
+[0m10:17:52.823831 [debug] [MainThread]: On master: COMMIT
+[0m10:17:52.823831 [debug] [MainThread]: Using sqlite connection "master"
+[0m10:17:52.826009 [debug] [MainThread]: On master: COMMIT
+[0m10:17:52.826009 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m10:17:52.827766 [debug] [MainThread]: On master: Close
+[0m10:17:52.827766 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m10:17:52.830355 [debug] [MainThread]: Connection 'list_database' was properly closed.
+[0m10:17:52.831367 [debug] [MainThread]: Connection 'list_database_main' was properly closed.
+[0m10:17:52.832774 [debug] [MainThread]: Connection 'model.dip_rentenpolitik.mart_rentenpolitik_monitor' was properly closed.
+[0m10:17:52.833774 [info ] [MainThread]: 
+[0m10:17:52.834770 [info ] [MainThread]: Finished running 1 table model, 3 view models in 0 hours 0 minutes and 0.66 seconds (0.66s).
+[0m10:17:52.838053 [debug] [MainThread]: Command end result
+[0m10:17:52.884525 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\padma\Desktop\CaseStudy\dbt_project\target\manifest.json
+[0m10:17:52.888532 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\padma\Desktop\CaseStudy\dbt_project\target\semantic_manifest.json
+[0m10:17:52.898036 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\Users\padma\Desktop\CaseStudy\dbt_project\target\run_results.json
+[0m10:17:52.898036 [info ] [MainThread]: 
+[0m10:17:52.899036 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m10:17:52.900036 [info ] [MainThread]: 
+[0m10:17:52.901036 [info ] [MainThread]: Done. PASS=4 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=4
+[0m10:17:52.903538 [debug] [MainThread]: Command `dbt run` succeeded at 10:17:52.903538 after 3.70 seconds
+[0m10:17:52.903538 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027D4882B810>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027D489E4110>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027D4110B450>]}
+[0m10:17:52.904544 [debug] [MainThread]: Flushing usage events
+[0m10:17:53.844288 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m10:19:07.888865 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002621A64BF90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002621A64BD90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002621A64BF50>]}
+
+
+============================== 10:19:07.895019 | 8507a0e9-f08f-413c-b448-403e686d1084 ==============================
+[0m10:19:07.895019 [info ] [MainThread]: Running with dbt=1.10.13
+[0m10:19:07.897026 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\padma\\.dbt', 'invocation_command': 'dbt test', 'use_colors': 'True', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'log_path': 'C:\\Users\\padma\\Desktop\\CaseStudy\\dbt_project\\logs'}
+[0m10:19:08.298539 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '8507a0e9-f08f-413c-b448-403e686d1084', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002621A7CC410>]}
+[0m10:19:08.472209 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '8507a0e9-f08f-413c-b448-403e686d1084', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026218FEECD0>]}
+[0m10:19:08.472209 [info ] [MainThread]: Registered adapter: sqlite=1.10.0
+[0m10:19:09.052509 [debug] [MainThread]: checksum: 9f0c81e2574b4ff463f3d16d080df83c6982fc0372c9feeacae0504ac9ea3ffe, vars: {}, profile: , target: , version: 1.10.13
+[0m10:19:09.321884 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m10:19:09.323889 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m10:19:09.417660 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '8507a0e9-f08f-413c-b448-403e686d1084', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002621AB5E610>]}
+[0m10:19:09.696520 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\padma\Desktop\CaseStudy\dbt_project\target\manifest.json
+[0m10:19:09.700537 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\padma\Desktop\CaseStudy\dbt_project\target\semantic_manifest.json
+[0m10:19:09.755989 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '8507a0e9-f08f-413c-b448-403e686d1084', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002621AD3D9D0>]}
+[0m10:19:09.757394 [info ] [MainThread]: Found 4 models, 3 data tests, 2 sources, 416 macros
+[0m10:19:09.757394 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '8507a0e9-f08f-413c-b448-403e686d1084', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002621AA68A50>]}
+[0m10:19:09.760891 [info ] [MainThread]: 
+[0m10:19:09.760891 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m10:19:09.764984 [info ] [MainThread]: 
+[0m10:19:09.766129 [debug] [MainThread]: Acquiring new sqlite connection 'master'
+[0m10:19:09.783887 [debug] [ThreadPool]: Acquiring new sqlite connection 'list_database_main'
+[0m10:19:09.982951 [debug] [ThreadPool]: Using sqlite connection "list_database_main"
+[0m10:19:09.984963 [debug] [ThreadPool]: On list_database_main: BEGIN
+[0m10:19:09.986015 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m10:19:09.989032 [debug] [ThreadPool]: SQL status: OK in 0.004 seconds
+[0m10:19:09.991037 [debug] [ThreadPool]: Using sqlite connection "list_database_main"
+[0m10:19:09.991037 [debug] [ThreadPool]: On list_database_main: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "dip_rentenpolitik", "target_name": "dev", "connection_name": "list_database_main"} */
+
+        pragma database_list
+    
+[0m10:19:09.991037 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m10:19:09.994968 [debug] [ThreadPool]: Using sqlite connection "list_database_main"
+[0m10:19:09.994968 [debug] [ThreadPool]: On list_database_main: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "dip_rentenpolitik", "target_name": "dev", "connection_name": "list_database_main"} */
+
+            SELECT
+                'database' as database
+                ,name
+                ,'main' AS schema
+                ,type as data_type
+            FROM
+                main.sqlite_master
+            WHERE
+                name NOT LIKE 'sqlite_%'
+        
+[0m10:19:09.998830 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m10:19:10.001848 [debug] [ThreadPool]: On list_database_main: ROLLBACK
+[0m10:19:10.003859 [debug] [ThreadPool]: On list_database_main: Close
+[0m10:19:10.007876 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '8507a0e9-f08f-413c-b448-403e686d1084', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002621AA68A50>]}
+[0m10:19:10.007876 [debug] [MainThread]: Using sqlite connection "master"
+[0m10:19:10.007876 [debug] [MainThread]: On master: BEGIN
+[0m10:19:10.010685 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m10:19:10.013777 [debug] [MainThread]: SQL status: OK in 0.004 seconds
+[0m10:19:10.013777 [debug] [MainThread]: On master: COMMIT
+[0m10:19:10.016291 [debug] [MainThread]: Using sqlite connection "master"
+[0m10:19:10.016291 [debug] [MainThread]: On master: COMMIT
+[0m10:19:10.018292 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m10:19:10.020300 [debug] [MainThread]: On master: Close
+[0m10:19:10.022845 [debug] [Thread-1 (]: Began running node test.dip_rentenpolitik.not_null_mart_rentenpolitik_monitor_titel.4200b70c11
+[0m10:19:10.026342 [info ] [Thread-1 (]: 1 of 3 START test not_null_mart_rentenpolitik_monitor_titel .................... [RUN]
+[0m10:19:10.028350 [debug] [Thread-1 (]: Acquiring new sqlite connection 'test.dip_rentenpolitik.not_null_mart_rentenpolitik_monitor_titel.4200b70c11'
+[0m10:19:10.029357 [debug] [Thread-1 (]: Began compiling node test.dip_rentenpolitik.not_null_mart_rentenpolitik_monitor_titel.4200b70c11
+[0m10:19:10.073111 [debug] [Thread-1 (]: Writing injected SQL for node "test.dip_rentenpolitik.not_null_mart_rentenpolitik_monitor_titel.4200b70c11"
+[0m10:19:10.075120 [debug] [Thread-1 (]: Began executing node test.dip_rentenpolitik.not_null_mart_rentenpolitik_monitor_titel.4200b70c11
+[0m10:19:10.113083 [debug] [Thread-1 (]: Writing runtime sql for node "test.dip_rentenpolitik.not_null_mart_rentenpolitik_monitor_titel.4200b70c11"
+[0m10:19:10.116255 [debug] [Thread-1 (]: Using sqlite connection "test.dip_rentenpolitik.not_null_mart_rentenpolitik_monitor_titel.4200b70c11"
+[0m10:19:10.116255 [debug] [Thread-1 (]: On test.dip_rentenpolitik.not_null_mart_rentenpolitik_monitor_titel.4200b70c11: BEGIN
+[0m10:19:10.117674 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m10:19:10.119685 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m10:19:10.119685 [debug] [Thread-1 (]: Using sqlite connection "test.dip_rentenpolitik.not_null_mart_rentenpolitik_monitor_titel.4200b70c11"
+[0m10:19:10.119685 [debug] [Thread-1 (]: On test.dip_rentenpolitik.not_null_mart_rentenpolitik_monitor_titel.4200b70c11: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "dip_rentenpolitik", "target_name": "dev", "node_id": "test.dip_rentenpolitik.not_null_mart_rentenpolitik_monitor_titel.4200b70c11"} */
+
+    select
+      count(*) as failures,
+      case when count(*) != 0
+        then 'true' else 'false' end as should_warn,
+      case when count(*) != 0
+        then 'true' else 'false' end as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select titel
+from main."mart_rentenpolitik_monitor"
+where titel is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m10:19:10.127113 [debug] [Thread-1 (]: SQL status: OK in 0.004 seconds
+[0m10:19:10.137427 [debug] [Thread-1 (]: On test.dip_rentenpolitik.not_null_mart_rentenpolitik_monitor_titel.4200b70c11: ROLLBACK
+[0m10:19:10.137427 [debug] [Thread-1 (]: On test.dip_rentenpolitik.not_null_mart_rentenpolitik_monitor_titel.4200b70c11: Close
+[0m10:19:10.139443 [info ] [Thread-1 (]: 1 of 3 PASS not_null_mart_rentenpolitik_monitor_titel .......................... [[32mPASS[0m in 0.11s]
+[0m10:19:10.141413 [debug] [Thread-1 (]: Finished running node test.dip_rentenpolitik.not_null_mart_rentenpolitik_monitor_titel.4200b70c11
+[0m10:19:10.143424 [debug] [Thread-1 (]: Began running node test.dip_rentenpolitik.not_null_mart_rentenpolitik_monitor_vorgang_id.aed6938d61
+[0m10:19:10.145046 [info ] [Thread-1 (]: 2 of 3 START test not_null_mart_rentenpolitik_monitor_vorgang_id ............... [RUN]
+[0m10:19:10.147056 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.dip_rentenpolitik.not_null_mart_rentenpolitik_monitor_titel.4200b70c11, now test.dip_rentenpolitik.not_null_mart_rentenpolitik_monitor_vorgang_id.aed6938d61)
+[0m10:19:10.147056 [debug] [Thread-1 (]: Began compiling node test.dip_rentenpolitik.not_null_mart_rentenpolitik_monitor_vorgang_id.aed6938d61
+[0m10:19:10.158779 [debug] [Thread-1 (]: Writing injected SQL for node "test.dip_rentenpolitik.not_null_mart_rentenpolitik_monitor_vorgang_id.aed6938d61"
+[0m10:19:10.160779 [debug] [Thread-1 (]: Began executing node test.dip_rentenpolitik.not_null_mart_rentenpolitik_monitor_vorgang_id.aed6938d61
+[0m10:19:10.169572 [debug] [Thread-1 (]: Writing runtime sql for node "test.dip_rentenpolitik.not_null_mart_rentenpolitik_monitor_vorgang_id.aed6938d61"
+[0m10:19:10.171580 [debug] [Thread-1 (]: Using sqlite connection "test.dip_rentenpolitik.not_null_mart_rentenpolitik_monitor_vorgang_id.aed6938d61"
+[0m10:19:10.173590 [debug] [Thread-1 (]: On test.dip_rentenpolitik.not_null_mart_rentenpolitik_monitor_vorgang_id.aed6938d61: BEGIN
+[0m10:19:10.173590 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m10:19:10.177611 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m10:19:10.179620 [debug] [Thread-1 (]: Using sqlite connection "test.dip_rentenpolitik.not_null_mart_rentenpolitik_monitor_vorgang_id.aed6938d61"
+[0m10:19:10.179620 [debug] [Thread-1 (]: On test.dip_rentenpolitik.not_null_mart_rentenpolitik_monitor_vorgang_id.aed6938d61: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "dip_rentenpolitik", "target_name": "dev", "node_id": "test.dip_rentenpolitik.not_null_mart_rentenpolitik_monitor_vorgang_id.aed6938d61"} */
+
+    select
+      count(*) as failures,
+      case when count(*) != 0
+        then 'true' else 'false' end as should_warn,
+      case when count(*) != 0
+        then 'true' else 'false' end as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select vorgang_id
+from main."mart_rentenpolitik_monitor"
+where vorgang_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m10:19:10.185752 [debug] [Thread-1 (]: SQL status: OK in 0.004 seconds
+[0m10:19:10.189221 [debug] [Thread-1 (]: On test.dip_rentenpolitik.not_null_mart_rentenpolitik_monitor_vorgang_id.aed6938d61: ROLLBACK
+[0m10:19:10.189221 [debug] [Thread-1 (]: On test.dip_rentenpolitik.not_null_mart_rentenpolitik_monitor_vorgang_id.aed6938d61: Close
+[0m10:19:10.190558 [info ] [Thread-1 (]: 2 of 3 PASS not_null_mart_rentenpolitik_monitor_vorgang_id ..................... [[32mPASS[0m in 0.05s]
+[0m10:19:10.191887 [debug] [Thread-1 (]: Finished running node test.dip_rentenpolitik.not_null_mart_rentenpolitik_monitor_vorgang_id.aed6938d61
+[0m10:19:10.193163 [debug] [Thread-1 (]: Began running node test.dip_rentenpolitik.unique_mart_rentenpolitik_monitor_vorgang_id.73f5e93080
+[0m10:19:10.194177 [info ] [Thread-1 (]: 3 of 3 START test unique_mart_rentenpolitik_monitor_vorgang_id ................. [RUN]
+[0m10:19:10.195178 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.dip_rentenpolitik.not_null_mart_rentenpolitik_monitor_vorgang_id.aed6938d61, now test.dip_rentenpolitik.unique_mart_rentenpolitik_monitor_vorgang_id.73f5e93080)
+[0m10:19:10.195178 [debug] [Thread-1 (]: Began compiling node test.dip_rentenpolitik.unique_mart_rentenpolitik_monitor_vorgang_id.73f5e93080
+[0m10:19:10.209467 [debug] [Thread-1 (]: Writing injected SQL for node "test.dip_rentenpolitik.unique_mart_rentenpolitik_monitor_vorgang_id.73f5e93080"
+[0m10:19:10.210454 [debug] [Thread-1 (]: Began executing node test.dip_rentenpolitik.unique_mart_rentenpolitik_monitor_vorgang_id.73f5e93080
+[0m10:19:10.214908 [debug] [Thread-1 (]: Writing runtime sql for node "test.dip_rentenpolitik.unique_mart_rentenpolitik_monitor_vorgang_id.73f5e93080"
+[0m10:19:10.218748 [debug] [Thread-1 (]: Using sqlite connection "test.dip_rentenpolitik.unique_mart_rentenpolitik_monitor_vorgang_id.73f5e93080"
+[0m10:19:10.218748 [debug] [Thread-1 (]: On test.dip_rentenpolitik.unique_mart_rentenpolitik_monitor_vorgang_id.73f5e93080: BEGIN
+[0m10:19:10.221210 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m10:19:10.225009 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m10:19:10.227228 [debug] [Thread-1 (]: Using sqlite connection "test.dip_rentenpolitik.unique_mart_rentenpolitik_monitor_vorgang_id.73f5e93080"
+[0m10:19:10.227228 [debug] [Thread-1 (]: On test.dip_rentenpolitik.unique_mart_rentenpolitik_monitor_vorgang_id.73f5e93080: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "dip_rentenpolitik", "target_name": "dev", "node_id": "test.dip_rentenpolitik.unique_mart_rentenpolitik_monitor_vorgang_id.73f5e93080"} */
+
+    select
+      count(*) as failures,
+      case when count(*) != 0
+        then 'true' else 'false' end as should_warn,
+      case when count(*) != 0
+        then 'true' else 'false' end as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    vorgang_id as unique_field,
+    count(*) as n_records
+
+from main."mart_rentenpolitik_monitor"
+where vorgang_id is not null
+group by vorgang_id
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m10:19:10.233606 [debug] [Thread-1 (]: SQL status: OK in 0.004 seconds
+[0m10:19:10.238454 [debug] [Thread-1 (]: On test.dip_rentenpolitik.unique_mart_rentenpolitik_monitor_vorgang_id.73f5e93080: ROLLBACK
+[0m10:19:10.238454 [debug] [Thread-1 (]: On test.dip_rentenpolitik.unique_mart_rentenpolitik_monitor_vorgang_id.73f5e93080: Close
+[0m10:19:10.240463 [info ] [Thread-1 (]: 3 of 3 PASS unique_mart_rentenpolitik_monitor_vorgang_id ....................... [[32mPASS[0m in 0.05s]
+[0m10:19:10.242474 [debug] [Thread-1 (]: Finished running node test.dip_rentenpolitik.unique_mart_rentenpolitik_monitor_vorgang_id.73f5e93080
+[0m10:19:10.245661 [debug] [MainThread]: Using sqlite connection "master"
+[0m10:19:10.245661 [debug] [MainThread]: On master: BEGIN
+[0m10:19:10.245661 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m10:19:10.250537 [debug] [MainThread]: SQL status: OK in 0.003 seconds
+[0m10:19:10.251552 [debug] [MainThread]: On master: COMMIT
+[0m10:19:10.252786 [debug] [MainThread]: Using sqlite connection "master"
+[0m10:19:10.253845 [debug] [MainThread]: On master: COMMIT
+[0m10:19:10.255216 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m10:19:10.256213 [debug] [MainThread]: On master: Close
+[0m10:19:10.257215 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m10:19:10.258642 [debug] [MainThread]: Connection 'list_database_main' was properly closed.
+[0m10:19:10.259623 [debug] [MainThread]: Connection 'test.dip_rentenpolitik.unique_mart_rentenpolitik_monitor_vorgang_id.73f5e93080' was properly closed.
+[0m10:19:10.260667 [info ] [MainThread]: 
+[0m10:19:10.261706 [info ] [MainThread]: Finished running 3 data tests in 0 hours 0 minutes and 0.49 seconds (0.49s).
+[0m10:19:10.263813 [debug] [MainThread]: Command end result
+[0m10:19:10.320731 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\padma\Desktop\CaseStudy\dbt_project\target\manifest.json
+[0m10:19:10.324732 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\padma\Desktop\CaseStudy\dbt_project\target\semantic_manifest.json
+[0m10:19:10.341525 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\Users\padma\Desktop\CaseStudy\dbt_project\target\run_results.json
+[0m10:19:10.342910 [info ] [MainThread]: 
+[0m10:19:10.344909 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m10:19:10.345908 [info ] [MainThread]: 
+[0m10:19:10.347908 [info ] [MainThread]: Done. PASS=3 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=3
+[0m10:19:10.349984 [debug] [MainThread]: Command `dbt test` succeeded at 10:19:10.349984 after 2.63 seconds
+[0m10:19:10.351991 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000262193315D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000262195BBF50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000262187D8350>]}
+[0m10:19:10.352497 [debug] [MainThread]: Flushing usage events
+[0m10:19:11.228181 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m15:14:09.777787 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B2A1588590>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B2A158A710>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B2A158BA90>]}
+
+
+============================== 15:14:09.780543 | 07a4164c-dfc6-4eb8-aa9f-9b6182a4a30d ==============================
+[0m15:14:09.780543 [info ] [MainThread]: Running with dbt=1.10.13
+[0m15:14:09.780543 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'False', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'profiles_dir': 'C:\\Users\\padma\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'use_colors': 'True', 'invocation_command': 'dbt run', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'log_path': 'C:\\Users\\padma\\Desktop\\CaseStudy\\dbt_project\\logs'}
+[0m15:14:10.142803 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '07a4164c-dfc6-4eb8-aa9f-9b6182a4a30d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B2A1663F50>]}
+[0m15:14:10.237779 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '07a4164c-dfc6-4eb8-aa9f-9b6182a4a30d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B29FF2ED10>]}
+[0m15:14:10.237779 [info ] [MainThread]: Registered adapter: sqlite=1.10.0
+[0m15:14:10.678747 [debug] [MainThread]: checksum: 9f0c81e2574b4ff463f3d16d080df83c6982fc0372c9feeacae0504ac9ea3ffe, vars: {}, profile: , target: , version: 1.10.13
+[0m15:14:10.921163 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m15:14:10.921163 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m15:14:10.988206 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '07a4164c-dfc6-4eb8-aa9f-9b6182a4a30d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B2A1AB3890>]}
+[0m15:14:11.190491 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\padma\Desktop\CaseStudy\dbt_project\target\manifest.json
+[0m15:14:11.201223 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\padma\Desktop\CaseStudy\dbt_project\target\semantic_manifest.json
+[0m15:14:11.254441 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '07a4164c-dfc6-4eb8-aa9f-9b6182a4a30d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B2A1BE8190>]}
+[0m15:14:11.254441 [info ] [MainThread]: Found 4 models, 3 data tests, 2 sources, 416 macros
+[0m15:14:11.256449 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '07a4164c-dfc6-4eb8-aa9f-9b6182a4a30d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B2A19D4E10>]}
+[0m15:14:11.258455 [info ] [MainThread]: 
+[0m15:14:11.258455 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m15:14:11.260463 [info ] [MainThread]: 
+[0m15:14:11.262195 [debug] [MainThread]: Acquiring new sqlite connection 'master'
+[0m15:14:11.273203 [debug] [ThreadPool]: Acquiring new sqlite connection 'list_database'
+[0m15:14:11.495112 [debug] [ThreadPool]: Using sqlite connection "list_database"
+[0m15:14:11.495112 [debug] [ThreadPool]: On list_database: BEGIN
+[0m15:14:11.495112 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:14:11.508345 [debug] [ThreadPool]: SQL status: OK in 0.009 seconds
+[0m15:14:11.508345 [debug] [ThreadPool]: Using sqlite connection "list_database"
+[0m15:14:11.508345 [debug] [ThreadPool]: On list_database: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "dip_rentenpolitik", "target_name": "dev", "connection_name": "list_database"} */
+
+        pragma database_list
+    
+[0m15:14:11.512309 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m15:14:11.514245 [debug] [ThreadPool]: On list_database: ROLLBACK
+[0m15:14:11.514245 [debug] [ThreadPool]: On list_database: Close
+[0m15:14:11.516972 [debug] [ThreadPool]: Acquiring new sqlite connection 'list_database_main'
+[0m15:14:11.528868 [debug] [ThreadPool]: Using sqlite connection "list_database_main"
+[0m15:14:11.529373 [debug] [ThreadPool]: On list_database_main: BEGIN
+[0m15:14:11.530639 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:14:11.532646 [debug] [ThreadPool]: SQL status: OK in 0.003 seconds
+[0m15:14:11.532646 [debug] [ThreadPool]: Using sqlite connection "list_database_main"
+[0m15:14:11.534652 [debug] [ThreadPool]: On list_database_main: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "dip_rentenpolitik", "target_name": "dev", "connection_name": "list_database_main"} */
+
+        pragma database_list
+    
+[0m15:14:11.534652 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m15:14:11.534652 [debug] [ThreadPool]: Using sqlite connection "list_database_main"
+[0m15:14:11.534652 [debug] [ThreadPool]: On list_database_main: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "dip_rentenpolitik", "target_name": "dev", "connection_name": "list_database_main"} */
+
+            SELECT
+                'database' as database
+                ,name
+                ,'main' AS schema
+                ,type as data_type
+            FROM
+                main.sqlite_master
+            WHERE
+                name NOT LIKE 'sqlite_%'
+        
+[0m15:14:11.539563 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m15:14:11.540799 [debug] [ThreadPool]: On list_database_main: ROLLBACK
+[0m15:14:11.542807 [debug] [ThreadPool]: On list_database_main: Close
+[0m15:14:11.545245 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '07a4164c-dfc6-4eb8-aa9f-9b6182a4a30d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B2A17628D0>]}
+[0m15:14:11.547252 [debug] [MainThread]: Using sqlite connection "master"
+[0m15:14:11.547252 [debug] [MainThread]: On master: BEGIN
+[0m15:14:11.547252 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m15:14:11.552116 [debug] [MainThread]: SQL status: OK in 0.003 seconds
+[0m15:14:11.554122 [debug] [MainThread]: On master: COMMIT
+[0m15:14:11.554122 [debug] [MainThread]: Using sqlite connection "master"
+[0m15:14:11.555630 [debug] [MainThread]: On master: COMMIT
+[0m15:14:11.556733 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m15:14:11.556733 [debug] [MainThread]: On master: Close
+[0m15:14:11.565399 [debug] [Thread-1 (]: Began running node model.dip_rentenpolitik.stg_dip__vorgaenge
+[0m15:14:11.566989 [info ] [Thread-1 (]: 1 of 4 START sql view model main.stg_dip__vorgaenge ............................ [RUN]
+[0m15:14:11.566989 [debug] [Thread-1 (]: Acquiring new sqlite connection 'model.dip_rentenpolitik.stg_dip__vorgaenge'
+[0m15:14:11.566989 [debug] [Thread-1 (]: Began compiling node model.dip_rentenpolitik.stg_dip__vorgaenge
+[0m15:14:11.574246 [debug] [Thread-1 (]: Writing injected SQL for node "model.dip_rentenpolitik.stg_dip__vorgaenge"
+[0m15:14:11.581572 [debug] [Thread-1 (]: Began executing node model.dip_rentenpolitik.stg_dip__vorgaenge
+[0m15:14:11.616116 [debug] [Thread-1 (]: Using sqlite connection "model.dip_rentenpolitik.stg_dip__vorgaenge"
+[0m15:14:11.617452 [debug] [Thread-1 (]: On model.dip_rentenpolitik.stg_dip__vorgaenge: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "dip_rentenpolitik", "target_name": "dev", "node_id": "model.dip_rentenpolitik.stg_dip__vorgaenge"} */
+drop view if exists "main"."stg_dip__vorgaenge"
+[0m15:14:11.618731 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m15:14:11.625082 [debug] [Thread-1 (]: SQL status: OK in 0.006 seconds
+[0m15:14:11.630077 [debug] [Thread-1 (]: Writing runtime sql for node "model.dip_rentenpolitik.stg_dip__vorgaenge"
+[0m15:14:11.632983 [debug] [Thread-1 (]: Using sqlite connection "model.dip_rentenpolitik.stg_dip__vorgaenge"
+[0m15:14:11.632983 [debug] [Thread-1 (]: On model.dip_rentenpolitik.stg_dip__vorgaenge: BEGIN
+[0m15:14:11.634990 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m15:14:11.634990 [debug] [Thread-1 (]: Using sqlite connection "model.dip_rentenpolitik.stg_dip__vorgaenge"
+[0m15:14:11.636997 [debug] [Thread-1 (]: On model.dip_rentenpolitik.stg_dip__vorgaenge: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "dip_rentenpolitik", "target_name": "dev", "node_id": "model.dip_rentenpolitik.stg_dip__vorgaenge"} */
+
+    
+    create view main."stg_dip__vorgaenge" as
+    -- stg_dip__vorgaenge.sql
+--
+-- Deduplicates the append-only raw_documents table down to the latest
+-- known state per Vorgang (legislative procedure), and flattens the JSON
+-- payload into typed columns. Scalar fields are extracted directly;
+-- array fields (initiative, sachgebiet, deskriptor) are kept as raw JSON
+-- text here and unnested into separate bridge tables below, since a
+-- Vorgang can have zero, one, or many of each -- flattening them into
+-- this table would either lose information or require pivoting.
+--
+-- Field names/types are taken from the live DIP Swagger schema for
+-- GET /vorgang (id, typ, beratungsstand, vorgangstyp, wahlperiode,
+-- initiative, datum, aktualisiert, titel, abstract, sachgebiet,
+-- deskriptor, gesta, ...).
+
+with raw as (
+    select *
+    from main."raw_documents"
+    where resource = 'vorgang'
+),
+
+-- Keep only the most recently fetched payload per Vorgang. The raw table
+-- is intentionally append-only (see dip_client.py docstring); this is
+-- where "latest known state" gets defined.
+latest_fetch as (
+    select
+        dip_id,
+        max(fetched_at) as fetched_at
+    from raw
+    group by dip_id
+),
+
+deduped as (
+    select raw.*
+    from raw
+    inner join latest_fetch
+        on raw.dip_id = latest_fetch.dip_id
+        and raw.fetched_at = latest_fetch.fetched_at
+)
+
+select
+    cast(json_extract(payload_json, '$.id') as integer)          as vorgang_id,
+    json_extract(payload_json, '$.titel')                        as titel,
+    json_extract(payload_json, '$.abstract')                     as abstract,
+    json_extract(payload_json, '$.vorgangstyp')                  as vorgangstyp,
+    json_extract(payload_json, '$.beratungsstand')                as beratungsstand,
+    cast(json_extract(payload_json, '$.wahlperiode') as integer) as wahlperiode,
+    json_extract(payload_json, '$.datum')                        as datum,
+    json_extract(payload_json, '$.aktualisiert')                 as aktualisiert,
+    json_extract(payload_json, '$.gesta')                        as gesta,
+    -- kept as raw JSON arrays; unnested in stg_dip__vorgang_sachgebiete
+    json_extract(payload_json, '$.initiative')                   as initiative_json,
+    json_extract(payload_json, '$.sachgebiet')                   as sachgebiet_json,
+    json_extract(payload_json, '$.deskriptor')                   as deskriptor_json,
+    fetched_at
+from deduped;
+[0m15:14:11.639003 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m15:14:11.650170 [debug] [Thread-1 (]: On model.dip_rentenpolitik.stg_dip__vorgaenge: COMMIT
+[0m15:14:11.650170 [debug] [Thread-1 (]: Using sqlite connection "model.dip_rentenpolitik.stg_dip__vorgaenge"
+[0m15:14:11.652179 [debug] [Thread-1 (]: On model.dip_rentenpolitik.stg_dip__vorgaenge: COMMIT
+[0m15:14:11.653185 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m15:14:11.656628 [debug] [Thread-1 (]: On model.dip_rentenpolitik.stg_dip__vorgaenge: Close
+[0m15:14:11.664134 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '07a4164c-dfc6-4eb8-aa9f-9b6182a4a30d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B29FF0AF10>]}
+[0m15:14:11.666142 [info ] [Thread-1 (]: 1 of 4 OK created sql view model main.stg_dip__vorgaenge ....................... [[32mOK[0m in 0.09s]
+[0m15:14:11.668151 [debug] [Thread-1 (]: Finished running node model.dip_rentenpolitik.stg_dip__vorgaenge
+[0m15:14:11.670157 [debug] [Thread-1 (]: Began running node model.dip_rentenpolitik.stg_dip__vorgang_initiativen
+[0m15:14:11.672164 [info ] [Thread-1 (]: 2 of 4 START sql view model main.stg_dip__vorgang_initiativen .................. [RUN]
+[0m15:14:11.672164 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.dip_rentenpolitik.stg_dip__vorgaenge, now model.dip_rentenpolitik.stg_dip__vorgang_initiativen)
+[0m15:14:11.674904 [debug] [Thread-1 (]: Began compiling node model.dip_rentenpolitik.stg_dip__vorgang_initiativen
+[0m15:14:11.685466 [debug] [Thread-1 (]: Writing injected SQL for node "model.dip_rentenpolitik.stg_dip__vorgang_initiativen"
+[0m15:14:11.687489 [debug] [Thread-1 (]: Began executing node model.dip_rentenpolitik.stg_dip__vorgang_initiativen
+[0m15:14:11.695950 [debug] [Thread-1 (]: Using sqlite connection "model.dip_rentenpolitik.stg_dip__vorgang_initiativen"
+[0m15:14:11.697959 [debug] [Thread-1 (]: On model.dip_rentenpolitik.stg_dip__vorgang_initiativen: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "dip_rentenpolitik", "target_name": "dev", "node_id": "model.dip_rentenpolitik.stg_dip__vorgang_initiativen"} */
+drop view if exists "main"."stg_dip__vorgang_initiativen"
+[0m15:14:11.698965 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m15:14:11.705606 [debug] [Thread-1 (]: SQL status: OK in 0.007 seconds
+[0m15:14:11.708605 [debug] [Thread-1 (]: Writing runtime sql for node "model.dip_rentenpolitik.stg_dip__vorgang_initiativen"
+[0m15:14:11.710605 [debug] [Thread-1 (]: Using sqlite connection "model.dip_rentenpolitik.stg_dip__vorgang_initiativen"
+[0m15:14:11.712004 [debug] [Thread-1 (]: On model.dip_rentenpolitik.stg_dip__vorgang_initiativen: BEGIN
+[0m15:14:11.713807 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m15:14:11.714815 [debug] [Thread-1 (]: Using sqlite connection "model.dip_rentenpolitik.stg_dip__vorgang_initiativen"
+[0m15:14:11.716314 [debug] [Thread-1 (]: On model.dip_rentenpolitik.stg_dip__vorgang_initiativen: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "dip_rentenpolitik", "target_name": "dev", "node_id": "model.dip_rentenpolitik.stg_dip__vorgang_initiativen"} */
+
+    
+    create view main."stg_dip__vorgang_initiativen" as
+    -- stg_dip__vorgang_initiativen.sql
+--
+-- Unnests the `initiative` array (who introduced/originated the procedure,
+-- e.g. a Fraktion or the Bundesregierung) into one row per
+-- (vorgang_id, initiative). Relevant for Public Affairs work: knowing
+-- *who* is driving a procedure is often as important as its status.
+
+select
+    v.vorgang_id,
+    je.value as initiative
+from main."stg_dip__vorgaenge" v
+join json_each(v.initiative_json) je
+where v.initiative_json is not null;
+[0m15:14:11.718424 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m15:14:11.720424 [debug] [Thread-1 (]: On model.dip_rentenpolitik.stg_dip__vorgang_initiativen: COMMIT
+[0m15:14:11.721423 [debug] [Thread-1 (]: Using sqlite connection "model.dip_rentenpolitik.stg_dip__vorgang_initiativen"
+[0m15:14:11.722424 [debug] [Thread-1 (]: On model.dip_rentenpolitik.stg_dip__vorgang_initiativen: COMMIT
+[0m15:14:11.726425 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m15:14:11.728423 [debug] [Thread-1 (]: On model.dip_rentenpolitik.stg_dip__vorgang_initiativen: Close
+[0m15:14:11.730423 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '07a4164c-dfc6-4eb8-aa9f-9b6182a4a30d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B2A1663890>]}
+[0m15:14:11.731425 [info ] [Thread-1 (]: 2 of 4 OK created sql view model main.stg_dip__vorgang_initiativen ............. [[32mOK[0m in 0.06s]
+[0m15:14:11.733820 [debug] [Thread-1 (]: Finished running node model.dip_rentenpolitik.stg_dip__vorgang_initiativen
+[0m15:14:11.733820 [debug] [Thread-1 (]: Began running node model.dip_rentenpolitik.stg_dip__vorgang_sachgebiete
+[0m15:14:11.735229 [info ] [Thread-1 (]: 3 of 4 START sql view model main.stg_dip__vorgang_sachgebiete .................. [RUN]
+[0m15:14:11.736747 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.dip_rentenpolitik.stg_dip__vorgang_initiativen, now model.dip_rentenpolitik.stg_dip__vorgang_sachgebiete)
+[0m15:14:11.738002 [debug] [Thread-1 (]: Began compiling node model.dip_rentenpolitik.stg_dip__vorgang_sachgebiete
+[0m15:14:11.744019 [debug] [Thread-1 (]: Writing injected SQL for node "model.dip_rentenpolitik.stg_dip__vorgang_sachgebiete"
+[0m15:14:11.746025 [debug] [Thread-1 (]: Began executing node model.dip_rentenpolitik.stg_dip__vorgang_sachgebiete
+[0m15:14:11.759745 [debug] [Thread-1 (]: Using sqlite connection "model.dip_rentenpolitik.stg_dip__vorgang_sachgebiete"
+[0m15:14:11.763310 [debug] [Thread-1 (]: On model.dip_rentenpolitik.stg_dip__vorgang_sachgebiete: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "dip_rentenpolitik", "target_name": "dev", "node_id": "model.dip_rentenpolitik.stg_dip__vorgang_sachgebiete"} */
+drop view if exists "main"."stg_dip__vorgang_sachgebiete"
+[0m15:14:11.763310 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m15:14:11.771298 [debug] [Thread-1 (]: SQL status: OK in 0.007 seconds
+[0m15:14:11.774297 [debug] [Thread-1 (]: Writing runtime sql for node "model.dip_rentenpolitik.stg_dip__vorgang_sachgebiete"
+[0m15:14:11.776304 [debug] [Thread-1 (]: Using sqlite connection "model.dip_rentenpolitik.stg_dip__vorgang_sachgebiete"
+[0m15:14:11.777304 [debug] [Thread-1 (]: On model.dip_rentenpolitik.stg_dip__vorgang_sachgebiete: BEGIN
+[0m15:14:11.777304 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m15:14:11.778305 [debug] [Thread-1 (]: Using sqlite connection "model.dip_rentenpolitik.stg_dip__vorgang_sachgebiete"
+[0m15:14:11.779310 [debug] [Thread-1 (]: On model.dip_rentenpolitik.stg_dip__vorgang_sachgebiete: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "dip_rentenpolitik", "target_name": "dev", "node_id": "model.dip_rentenpolitik.stg_dip__vorgang_sachgebiete"} */
+
+    
+    create view main."stg_dip__vorgang_sachgebiete" as
+    -- stg_dip__vorgang_sachgebiete.sql
+--
+-- Unnests the `sachgebiet` (topic area) array into one row per
+-- (vorgang_id, sachgebiet), using SQLite's json_each table-valued function.
+-- This is what lets the mart filter/group by topic without string matching
+-- on JSON text.
+
+select
+    v.vorgang_id,
+    je.value as sachgebiet
+from main."stg_dip__vorgaenge" v
+join json_each(v.sachgebiet_json) je
+where v.sachgebiet_json is not null;
+[0m15:14:11.781579 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m15:14:11.782597 [debug] [Thread-1 (]: On model.dip_rentenpolitik.stg_dip__vorgang_sachgebiete: COMMIT
+[0m15:14:11.783848 [debug] [Thread-1 (]: Using sqlite connection "model.dip_rentenpolitik.stg_dip__vorgang_sachgebiete"
+[0m15:14:11.783848 [debug] [Thread-1 (]: On model.dip_rentenpolitik.stg_dip__vorgang_sachgebiete: COMMIT
+[0m15:14:11.787866 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m15:14:11.788866 [debug] [Thread-1 (]: On model.dip_rentenpolitik.stg_dip__vorgang_sachgebiete: Close
+[0m15:14:11.789942 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '07a4164c-dfc6-4eb8-aa9f-9b6182a4a30d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B2A2009090>]}
+[0m15:14:11.790940 [info ] [Thread-1 (]: 3 of 4 OK created sql view model main.stg_dip__vorgang_sachgebiete ............. [[32mOK[0m in 0.05s]
+[0m15:14:11.793001 [debug] [Thread-1 (]: Finished running node model.dip_rentenpolitik.stg_dip__vorgang_sachgebiete
+[0m15:14:11.794522 [debug] [Thread-1 (]: Began running node model.dip_rentenpolitik.mart_rentenpolitik_monitor
+[0m15:14:11.795521 [info ] [Thread-1 (]: 4 of 4 START sql table model main.mart_rentenpolitik_monitor ................... [RUN]
+[0m15:14:11.796520 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.dip_rentenpolitik.stg_dip__vorgang_sachgebiete, now model.dip_rentenpolitik.mart_rentenpolitik_monitor)
+[0m15:14:11.798523 [debug] [Thread-1 (]: Began compiling node model.dip_rentenpolitik.mart_rentenpolitik_monitor
+[0m15:14:11.802980 [debug] [Thread-1 (]: Writing injected SQL for node "model.dip_rentenpolitik.mart_rentenpolitik_monitor"
+[0m15:14:11.806604 [debug] [Thread-1 (]: Began executing node model.dip_rentenpolitik.mart_rentenpolitik_monitor
+[0m15:14:11.825894 [debug] [Thread-1 (]: Using sqlite connection "model.dip_rentenpolitik.mart_rentenpolitik_monitor"
+[0m15:14:11.827894 [debug] [Thread-1 (]: On model.dip_rentenpolitik.mart_rentenpolitik_monitor: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "dip_rentenpolitik", "target_name": "dev", "node_id": "model.dip_rentenpolitik.mart_rentenpolitik_monitor"} */
+drop table if exists "main"."mart_rentenpolitik_monitor"
+[0m15:14:11.828895 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m15:14:11.841345 [debug] [Thread-1 (]: SQL status: OK in 0.013 seconds
+[0m15:14:11.849754 [debug] [Thread-1 (]: Writing runtime sql for node "model.dip_rentenpolitik.mart_rentenpolitik_monitor"
+[0m15:14:11.852284 [debug] [Thread-1 (]: Using sqlite connection "model.dip_rentenpolitik.mart_rentenpolitik_monitor"
+[0m15:14:11.852284 [debug] [Thread-1 (]: On model.dip_rentenpolitik.mart_rentenpolitik_monitor: BEGIN
+[0m15:14:11.854290 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m15:14:11.854290 [debug] [Thread-1 (]: Using sqlite connection "model.dip_rentenpolitik.mart_rentenpolitik_monitor"
+[0m15:14:11.856296 [debug] [Thread-1 (]: On model.dip_rentenpolitik.mart_rentenpolitik_monitor: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "dip_rentenpolitik", "target_name": "dev", "node_id": "model.dip_rentenpolitik.mart_rentenpolitik_monitor"} */
+
+  
+    
+    
+    create  table main."mart_rentenpolitik_monitor"
+    as
+        -- mart_rentenpolitik_monitor.sql
+--
+-- The client-facing deliverable: one row per legislative procedure (Vorgang)
+-- relevant to pension policy, with its current status, originator(s), and
+-- topic tags, ready to sort by most-recently-updated for a monitoring feed.
+--
+-- Initiativen and Sachgebiete are re-aggregated back into comma-separated
+-- text here (via group_concat) because this table is meant to be read
+-- directly by a human/report, not joined further -- one row per Vorgang is
+-- the right grain for that. If a consumer needs to filter/join on a single
+-- topic or initiator, use stg_dip__vorgang_sachgebiete /
+-- stg_dip__vorgang_initiativen directly instead.
+
+with sachgebiete_agg as (
+    select
+        vorgang_id,
+        group_concat(distinct sachgebiet) as sachgebiete
+    from main."stg_dip__vorgang_sachgebiete"
+    group by vorgang_id
+),
+
+initiativen_agg as (
+    select
+        vorgang_id,
+        group_concat(distinct initiative) as initiativen
+    from main."stg_dip__vorgang_initiativen"
+    group by vorgang_id
+)
+
+select
+    v.vorgang_id,
+    v.titel,
+    v.vorgangstyp,
+    v.beratungsstand,
+    v.wahlperiode,
+    v.datum,
+    v.aktualisiert,
+    initiativen_agg.initiativen,
+    sachgebiete_agg.sachgebiete,
+    v.abstract,
+    v.gesta,
+    'https://dip.bundestag.de/vorgang/-/' || v.vorgang_id as dip_url,
+    v.fetched_at as last_ingested_at
+from main."stg_dip__vorgaenge" v
+left join sachgebiete_agg on v.vorgang_id = sachgebiete_agg.vorgang_id
+left join initiativen_agg on v.vorgang_id = initiativen_agg.vorgang_id
+order by v.aktualisiert desc
+
+  
+[0m15:14:12.123921 [debug] [Thread-1 (]: SQL status: OK in 0.267 seconds
+[0m15:14:12.127938 [debug] [Thread-1 (]: On model.dip_rentenpolitik.mart_rentenpolitik_monitor: COMMIT
+[0m15:14:12.131025 [debug] [Thread-1 (]: Using sqlite connection "model.dip_rentenpolitik.mart_rentenpolitik_monitor"
+[0m15:14:12.131025 [debug] [Thread-1 (]: On model.dip_rentenpolitik.mart_rentenpolitik_monitor: COMMIT
+[0m15:14:12.186194 [debug] [Thread-1 (]: SQL status: OK in 0.053 seconds
+[0m15:14:12.188397 [debug] [Thread-1 (]: On model.dip_rentenpolitik.mart_rentenpolitik_monitor: Close
+[0m15:14:12.191916 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '07a4164c-dfc6-4eb8-aa9f-9b6182a4a30d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B2A2011850>]}
+[0m15:14:12.193921 [info ] [Thread-1 (]: 4 of 4 OK created sql table model main.mart_rentenpolitik_monitor .............. [[32mOK[0m in 0.39s]
+[0m15:14:12.196030 [debug] [Thread-1 (]: Finished running node model.dip_rentenpolitik.mart_rentenpolitik_monitor
+[0m15:14:12.213688 [debug] [MainThread]: Using sqlite connection "master"
+[0m15:14:12.214687 [debug] [MainThread]: On master: BEGIN
+[0m15:14:12.218440 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m15:14:12.224470 [debug] [MainThread]: SQL status: OK in 0.006 seconds
+[0m15:14:12.225752 [debug] [MainThread]: On master: COMMIT
+[0m15:14:12.226644 [debug] [MainThread]: Using sqlite connection "master"
+[0m15:14:12.228652 [debug] [MainThread]: On master: COMMIT
+[0m15:14:12.229160 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m15:14:12.231409 [debug] [MainThread]: On master: Close
+[0m15:14:12.232952 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m15:14:12.233790 [debug] [MainThread]: Connection 'list_database' was properly closed.
+[0m15:14:12.236366 [debug] [MainThread]: Connection 'list_database_main' was properly closed.
+[0m15:14:12.239200 [debug] [MainThread]: Connection 'model.dip_rentenpolitik.mart_rentenpolitik_monitor' was properly closed.
+[0m15:14:12.240209 [info ] [MainThread]: 
+[0m15:14:12.241319 [info ] [MainThread]: Finished running 1 table model, 3 view models in 0 hours 0 minutes and 0.98 seconds (0.98s).
+[0m15:14:12.243754 [debug] [MainThread]: Command end result
+[0m15:14:12.315596 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\padma\Desktop\CaseStudy\dbt_project\target\manifest.json
+[0m15:14:12.322449 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\padma\Desktop\CaseStudy\dbt_project\target\semantic_manifest.json
+[0m15:14:12.340134 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\Users\padma\Desktop\CaseStudy\dbt_project\target\run_results.json
+[0m15:14:12.340134 [info ] [MainThread]: 
+[0m15:14:12.340134 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m15:14:12.345750 [info ] [MainThread]: 
+[0m15:14:12.345750 [info ] [MainThread]: Done. PASS=4 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=4
+[0m15:14:12.349803 [debug] [MainThread]: Command `dbt run` succeeded at 15:14:12.349803 after 2.68 seconds
+[0m15:14:12.351815 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B2A1588790>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B2A1613E50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B298CBBED0>]}
+[0m15:14:12.353840 [debug] [MainThread]: Flushing usage events
+[0m15:14:13.622986 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m15:15:49.146474 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001981FBF5A90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001981FBF7AD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001981FBF6150>]}
+
+
+============================== 15:15:49.149021 | b2327e40-55e2-45f0-b4c8-ac4c182ff5a1 ==============================
+[0m15:15:49.149021 [info ] [MainThread]: Running with dbt=1.10.13
+[0m15:15:49.149021 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'empty': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'profiles_dir': 'C:\\Users\\padma\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'indirect_selection': 'eager', 'invocation_command': 'dbt test', 'use_colors': 'True', 'use_experimental_parser': 'False', 'log_path': 'C:\\Users\\padma\\Desktop\\CaseStudy\\dbt_project\\logs'}
+[0m15:15:49.382578 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'b2327e40-55e2-45f0-b4c8-ac4c182ff5a1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001981FBF7850>]}
+[0m15:15:49.463588 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'b2327e40-55e2-45f0-b4c8-ac4c182ff5a1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001981DC32390>]}
+[0m15:15:49.465595 [info ] [MainThread]: Registered adapter: sqlite=1.10.0
+[0m15:15:49.857825 [debug] [MainThread]: checksum: 9f0c81e2574b4ff463f3d16d080df83c6982fc0372c9feeacae0504ac9ea3ffe, vars: {}, profile: , target: , version: 1.10.13
+[0m15:15:50.064338 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m15:15:50.067239 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m15:15:50.137649 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'b2327e40-55e2-45f0-b4c8-ac4c182ff5a1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019820150690>]}
+[0m15:15:50.369148 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\padma\Desktop\CaseStudy\dbt_project\target\manifest.json
+[0m15:15:50.374535 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\padma\Desktop\CaseStudy\dbt_project\target\semantic_manifest.json
+[0m15:15:50.414005 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'b2327e40-55e2-45f0-b4c8-ac4c182ff5a1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001982023AD50>]}
+[0m15:15:50.414005 [info ] [MainThread]: Found 4 models, 3 data tests, 2 sources, 416 macros
+[0m15:15:50.414005 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'b2327e40-55e2-45f0-b4c8-ac4c182ff5a1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001981FC00750>]}
+[0m15:15:50.421290 [info ] [MainThread]: 
+[0m15:15:50.421290 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m15:15:50.421290 [info ] [MainThread]: 
+[0m15:15:50.421290 [debug] [MainThread]: Acquiring new sqlite connection 'master'
+[0m15:15:50.431310 [debug] [ThreadPool]: Acquiring new sqlite connection 'list_database_main'
+[0m15:15:50.555581 [debug] [ThreadPool]: Using sqlite connection "list_database_main"
+[0m15:15:50.555581 [debug] [ThreadPool]: On list_database_main: BEGIN
+[0m15:15:50.555581 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:15:50.558897 [debug] [ThreadPool]: SQL status: OK in 0.002 seconds
+[0m15:15:50.558897 [debug] [ThreadPool]: Using sqlite connection "list_database_main"
+[0m15:15:50.560904 [debug] [ThreadPool]: On list_database_main: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "dip_rentenpolitik", "target_name": "dev", "connection_name": "list_database_main"} */
+
+        pragma database_list
+    
+[0m15:15:50.560904 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m15:15:50.560904 [debug] [ThreadPool]: Using sqlite connection "list_database_main"
+[0m15:15:50.564040 [debug] [ThreadPool]: On list_database_main: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "dip_rentenpolitik", "target_name": "dev", "connection_name": "list_database_main"} */
+
+            SELECT
+                'database' as database
+                ,name
+                ,'main' AS schema
+                ,type as data_type
+            FROM
+                main.sqlite_master
+            WHERE
+                name NOT LIKE 'sqlite_%'
+        
+[0m15:15:50.564040 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m15:15:50.566533 [debug] [ThreadPool]: On list_database_main: ROLLBACK
+[0m15:15:50.566533 [debug] [ThreadPool]: On list_database_main: Close
+[0m15:15:50.569686 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'b2327e40-55e2-45f0-b4c8-ac4c182ff5a1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001981FE3FFD0>]}
+[0m15:15:50.569686 [debug] [MainThread]: Using sqlite connection "master"
+[0m15:15:50.571822 [debug] [MainThread]: On master: BEGIN
+[0m15:15:50.571822 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m15:15:50.571822 [debug] [MainThread]: SQL status: OK in 0.002 seconds
+[0m15:15:50.571822 [debug] [MainThread]: On master: COMMIT
+[0m15:15:50.571822 [debug] [MainThread]: Using sqlite connection "master"
+[0m15:15:50.575834 [debug] [MainThread]: On master: COMMIT
+[0m15:15:50.575834 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m15:15:50.575834 [debug] [MainThread]: On master: Close
+[0m15:15:50.579344 [debug] [Thread-1 (]: Began running node test.dip_rentenpolitik.not_null_mart_rentenpolitik_monitor_titel.4200b70c11
+[0m15:15:50.580644 [info ] [Thread-1 (]: 1 of 3 START test not_null_mart_rentenpolitik_monitor_titel .................... [RUN]
+[0m15:15:50.580644 [debug] [Thread-1 (]: Acquiring new sqlite connection 'test.dip_rentenpolitik.not_null_mart_rentenpolitik_monitor_titel.4200b70c11'
+[0m15:15:50.582397 [debug] [Thread-1 (]: Began compiling node test.dip_rentenpolitik.not_null_mart_rentenpolitik_monitor_titel.4200b70c11
+[0m15:15:50.608602 [debug] [Thread-1 (]: Writing injected SQL for node "test.dip_rentenpolitik.not_null_mart_rentenpolitik_monitor_titel.4200b70c11"
+[0m15:15:50.608602 [debug] [Thread-1 (]: Began executing node test.dip_rentenpolitik.not_null_mart_rentenpolitik_monitor_titel.4200b70c11
+[0m15:15:50.634869 [debug] [Thread-1 (]: Writing runtime sql for node "test.dip_rentenpolitik.not_null_mart_rentenpolitik_monitor_titel.4200b70c11"
+[0m15:15:50.637139 [debug] [Thread-1 (]: Using sqlite connection "test.dip_rentenpolitik.not_null_mart_rentenpolitik_monitor_titel.4200b70c11"
+[0m15:15:50.638142 [debug] [Thread-1 (]: On test.dip_rentenpolitik.not_null_mart_rentenpolitik_monitor_titel.4200b70c11: BEGIN
+[0m15:15:50.638142 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m15:15:50.641139 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m15:15:50.641139 [debug] [Thread-1 (]: Using sqlite connection "test.dip_rentenpolitik.not_null_mart_rentenpolitik_monitor_titel.4200b70c11"
+[0m15:15:50.642140 [debug] [Thread-1 (]: On test.dip_rentenpolitik.not_null_mart_rentenpolitik_monitor_titel.4200b70c11: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "dip_rentenpolitik", "target_name": "dev", "node_id": "test.dip_rentenpolitik.not_null_mart_rentenpolitik_monitor_titel.4200b70c11"} */
+
+    select
+      count(*) as failures,
+      case when count(*) != 0
+        then 'true' else 'false' end as should_warn,
+      case when count(*) != 0
+        then 'true' else 'false' end as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select titel
+from main."mart_rentenpolitik_monitor"
+where titel is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m15:15:50.645140 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m15:15:50.650139 [debug] [Thread-1 (]: On test.dip_rentenpolitik.not_null_mart_rentenpolitik_monitor_titel.4200b70c11: ROLLBACK
+[0m15:15:50.651784 [debug] [Thread-1 (]: On test.dip_rentenpolitik.not_null_mart_rentenpolitik_monitor_titel.4200b70c11: Close
+[0m15:15:50.652909 [info ] [Thread-1 (]: 1 of 3 PASS not_null_mart_rentenpolitik_monitor_titel .......................... [[32mPASS[0m in 0.07s]
+[0m15:15:50.653940 [debug] [Thread-1 (]: Finished running node test.dip_rentenpolitik.not_null_mart_rentenpolitik_monitor_titel.4200b70c11
+[0m15:15:50.655743 [debug] [Thread-1 (]: Began running node test.dip_rentenpolitik.not_null_mart_rentenpolitik_monitor_vorgang_id.aed6938d61
+[0m15:15:50.655743 [info ] [Thread-1 (]: 2 of 3 START test not_null_mart_rentenpolitik_monitor_vorgang_id ............... [RUN]
+[0m15:15:50.656753 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.dip_rentenpolitik.not_null_mart_rentenpolitik_monitor_titel.4200b70c11, now test.dip_rentenpolitik.not_null_mart_rentenpolitik_monitor_vorgang_id.aed6938d61)
+[0m15:15:50.657752 [debug] [Thread-1 (]: Began compiling node test.dip_rentenpolitik.not_null_mart_rentenpolitik_monitor_vorgang_id.aed6938d61
+[0m15:15:50.662757 [debug] [Thread-1 (]: Writing injected SQL for node "test.dip_rentenpolitik.not_null_mart_rentenpolitik_monitor_vorgang_id.aed6938d61"
+[0m15:15:50.663757 [debug] [Thread-1 (]: Began executing node test.dip_rentenpolitik.not_null_mart_rentenpolitik_monitor_vorgang_id.aed6938d61
+[0m15:15:50.667756 [debug] [Thread-1 (]: Writing runtime sql for node "test.dip_rentenpolitik.not_null_mart_rentenpolitik_monitor_vorgang_id.aed6938d61"
+[0m15:15:50.669301 [debug] [Thread-1 (]: Using sqlite connection "test.dip_rentenpolitik.not_null_mart_rentenpolitik_monitor_vorgang_id.aed6938d61"
+[0m15:15:50.670558 [debug] [Thread-1 (]: On test.dip_rentenpolitik.not_null_mart_rentenpolitik_monitor_vorgang_id.aed6938d61: BEGIN
+[0m15:15:50.671666 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m15:15:50.674635 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m15:15:50.675433 [debug] [Thread-1 (]: Using sqlite connection "test.dip_rentenpolitik.not_null_mart_rentenpolitik_monitor_vorgang_id.aed6938d61"
+[0m15:15:50.675851 [debug] [Thread-1 (]: On test.dip_rentenpolitik.not_null_mart_rentenpolitik_monitor_vorgang_id.aed6938d61: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "dip_rentenpolitik", "target_name": "dev", "node_id": "test.dip_rentenpolitik.not_null_mart_rentenpolitik_monitor_vorgang_id.aed6938d61"} */
+
+    select
+      count(*) as failures,
+      case when count(*) != 0
+        then 'true' else 'false' end as should_warn,
+      case when count(*) != 0
+        then 'true' else 'false' end as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select vorgang_id
+from main."mart_rentenpolitik_monitor"
+where vorgang_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m15:15:50.675851 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m15:15:50.675851 [debug] [Thread-1 (]: On test.dip_rentenpolitik.not_null_mart_rentenpolitik_monitor_vorgang_id.aed6938d61: ROLLBACK
+[0m15:15:50.675851 [debug] [Thread-1 (]: On test.dip_rentenpolitik.not_null_mart_rentenpolitik_monitor_vorgang_id.aed6938d61: Close
+[0m15:15:50.685970 [info ] [Thread-1 (]: 2 of 3 PASS not_null_mart_rentenpolitik_monitor_vorgang_id ..................... [[32mPASS[0m in 0.03s]
+[0m15:15:50.688386 [debug] [Thread-1 (]: Finished running node test.dip_rentenpolitik.not_null_mart_rentenpolitik_monitor_vorgang_id.aed6938d61
+[0m15:15:50.689782 [debug] [Thread-1 (]: Began running node test.dip_rentenpolitik.unique_mart_rentenpolitik_monitor_vorgang_id.73f5e93080
+[0m15:15:50.690860 [info ] [Thread-1 (]: 3 of 3 START test unique_mart_rentenpolitik_monitor_vorgang_id ................. [RUN]
+[0m15:15:50.691924 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.dip_rentenpolitik.not_null_mart_rentenpolitik_monitor_vorgang_id.aed6938d61, now test.dip_rentenpolitik.unique_mart_rentenpolitik_monitor_vorgang_id.73f5e93080)
+[0m15:15:50.693300 [debug] [Thread-1 (]: Began compiling node test.dip_rentenpolitik.unique_mart_rentenpolitik_monitor_vorgang_id.73f5e93080
+[0m15:15:50.714064 [debug] [Thread-1 (]: Writing injected SQL for node "test.dip_rentenpolitik.unique_mart_rentenpolitik_monitor_vorgang_id.73f5e93080"
+[0m15:15:50.716067 [debug] [Thread-1 (]: Began executing node test.dip_rentenpolitik.unique_mart_rentenpolitik_monitor_vorgang_id.73f5e93080
+[0m15:15:50.722501 [debug] [Thread-1 (]: Writing runtime sql for node "test.dip_rentenpolitik.unique_mart_rentenpolitik_monitor_vorgang_id.73f5e93080"
+[0m15:15:50.724505 [debug] [Thread-1 (]: Using sqlite connection "test.dip_rentenpolitik.unique_mart_rentenpolitik_monitor_vorgang_id.73f5e93080"
+[0m15:15:50.725505 [debug] [Thread-1 (]: On test.dip_rentenpolitik.unique_mart_rentenpolitik_monitor_vorgang_id.73f5e93080: BEGIN
+[0m15:15:50.726683 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m15:15:50.729775 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m15:15:50.730770 [debug] [Thread-1 (]: Using sqlite connection "test.dip_rentenpolitik.unique_mart_rentenpolitik_monitor_vorgang_id.73f5e93080"
+[0m15:15:50.731849 [debug] [Thread-1 (]: On test.dip_rentenpolitik.unique_mart_rentenpolitik_monitor_vorgang_id.73f5e93080: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "dip_rentenpolitik", "target_name": "dev", "node_id": "test.dip_rentenpolitik.unique_mart_rentenpolitik_monitor_vorgang_id.73f5e93080"} */
+
+    select
+      count(*) as failures,
+      case when count(*) != 0
+        then 'true' else 'false' end as should_warn,
+      case when count(*) != 0
+        then 'true' else 'false' end as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    vorgang_id as unique_field,
+    count(*) as n_records
+
+from main."mart_rentenpolitik_monitor"
+where vorgang_id is not null
+group by vorgang_id
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m15:15:50.737206 [debug] [Thread-1 (]: SQL status: OK in 0.004 seconds
+[0m15:15:50.740203 [debug] [Thread-1 (]: On test.dip_rentenpolitik.unique_mart_rentenpolitik_monitor_vorgang_id.73f5e93080: ROLLBACK
+[0m15:15:50.741202 [debug] [Thread-1 (]: On test.dip_rentenpolitik.unique_mart_rentenpolitik_monitor_vorgang_id.73f5e93080: Close
+[0m15:15:50.742202 [info ] [Thread-1 (]: 3 of 3 PASS unique_mart_rentenpolitik_monitor_vorgang_id ....................... [[32mPASS[0m in 0.05s]
+[0m15:15:50.743202 [debug] [Thread-1 (]: Finished running node test.dip_rentenpolitik.unique_mart_rentenpolitik_monitor_vorgang_id.73f5e93080
+[0m15:15:50.745206 [debug] [MainThread]: Using sqlite connection "master"
+[0m15:15:50.746229 [debug] [MainThread]: On master: BEGIN
+[0m15:15:50.746229 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m15:15:50.748247 [debug] [MainThread]: SQL status: OK in 0.002 seconds
+[0m15:15:50.748247 [debug] [MainThread]: On master: COMMIT
+[0m15:15:50.749264 [debug] [MainThread]: Using sqlite connection "master"
+[0m15:15:50.749264 [debug] [MainThread]: On master: COMMIT
+[0m15:15:50.750261 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m15:15:50.751372 [debug] [MainThread]: On master: Close
+[0m15:15:50.753276 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m15:15:50.753276 [debug] [MainThread]: Connection 'list_database_main' was properly closed.
+[0m15:15:50.754277 [debug] [MainThread]: Connection 'test.dip_rentenpolitik.unique_mart_rentenpolitik_monitor_vorgang_id.73f5e93080' was properly closed.
+[0m15:15:50.754277 [info ] [MainThread]: 
+[0m15:15:50.755272 [info ] [MainThread]: Finished running 3 data tests in 0 hours 0 minutes and 0.33 seconds (0.33s).
+[0m15:15:50.757487 [debug] [MainThread]: Command end result
+[0m15:15:50.803141 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\padma\Desktop\CaseStudy\dbt_project\target\manifest.json
+[0m15:15:50.808319 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\padma\Desktop\CaseStudy\dbt_project\target\semantic_manifest.json
+[0m15:15:50.824965 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\Users\padma\Desktop\CaseStudy\dbt_project\target\run_results.json
+[0m15:15:50.826582 [info ] [MainThread]: 
+[0m15:15:50.826582 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m15:15:50.826582 [info ] [MainThread]: 
+[0m15:15:50.826582 [info ] [MainThread]: Done. PASS=3 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=3
+[0m15:15:50.826582 [debug] [MainThread]: Command `dbt test` succeeded at 15:15:50.826582 after 1.80 seconds
+[0m15:15:50.826582 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001981FC2BC90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001981731B510>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001981EB76490>]}
+[0m15:15:50.826582 [debug] [MainThread]: Flushing usage events
+[0m15:15:51.946405 [debug] [MainThread]: An error was encountered while trying to flush usage events

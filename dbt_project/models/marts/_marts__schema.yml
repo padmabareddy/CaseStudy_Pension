@@ -1,0 +1,18 @@
+version: 2
+
+models:
+  - name: mart_rentenpolitik_monitor
+    description: >
+      Client-facing monitoring feed: one row per pension-policy-related
+      Vorgang (legislative procedure), sorted by most recently updated.
+    columns:
+      - name: vorgang_id
+        description: Unique DIP identifier for the Vorgang.
+        tests:
+          - unique
+          - not_null
+      - name: titel
+        tests:
+          - not_null
+      - name: beratungsstand
+        description: Current stage of the procedure (e.g. "Abgeschlossen", "Überwiesen").

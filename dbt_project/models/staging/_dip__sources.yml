@@ -1,0 +1,25 @@
+version: 2
+
+sources:
+  - name: dip_raw
+    description: >
+      Raw, append-only tables written directly by notebook/dip_ingest.ipynb.
+      Each row in raw_documents is one API response document, stored as a
+      JSON blob exactly as returned by the DIP API -- no transformation
+      happens before this point. fetch_log records every API call made,
+      for debugging and reproducibility.
+    schema: main
+    tables:
+      - name: raw_documents
+        description: One row per fetched document (any resource type), keyed by (resource, dip_id, fetched_at).
+        columns:
+          - name: resource
+            description: DIP resource type, e.g. 'vorgang'
+          - name: dip_id
+            description: The `id` field from the DIP API payload
+          - name: fetched_at
+            description: UTC timestamp of this fetch (ISO 8601)
+          - name: payload_json
+            description: Full raw JSON document as returned by the API
+      - name: fetch_log
+        description: One row per API call made by the notebook, for auditing/debugging.

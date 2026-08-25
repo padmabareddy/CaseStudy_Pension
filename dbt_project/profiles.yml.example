@@ -1,0 +1,18 @@
+# Copy to ~/.dbt/profiles.yml (or set DBT_PROFILES_DIR to this folder) and
+# adjust the path in schemas_and_paths to point at the .sqlite file created
+# by notebook/dip_ingest.ipynb (default: ../dip.sqlite relative to that
+# notebook, i.e. the repo root).
+#
+# Install with: pip install dbt-core dbt-sqlite
+
+dip_rentenpolitik:
+  target: dev
+  outputs:
+    dev:
+      type: sqlite
+      threads: 1
+      database: 'database'
+      schema: 'main'
+      schemas_and_paths:
+        main: '../dip.sqlite'
+      schema_directory: '.'
